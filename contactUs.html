@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="navbar.css">
+
+	<link rel="stylesheet" type = "text/css" href="/Users/MaheenContractor/Documents/BBS screens/lib/bootstrap.min.css">
+	<title>Contact Us</title>
+</head>
+<body style="background-color: #424242; color: #FFFFFF">
+
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="/Users/MaheenContractor/Documents/BBS screens/home.html">
+      <img src="/Users/MaheenContractor/Documents/BBS screens/images/BBS_logo2-4.png"> </a>
+    </div>
+    <div>
+    <br>
+        <a href="/Users/MaheenContractor/Documents/BBS screens/register.html">
+          <img align="right" id= "profile" src="/Users/MaheenContractor/Documents/BBS screens/images/circle.png"></a>
+          <div class="text" style="position: absolute; left: 1150px; top: 50px; font-size: 15px; color: #FFFFFF"><b>Maheen</b></div>
+          <!-- <a href="/Users/MaheenContractor/Documents/BBS screens/register.html" style="position: relative;left: 920px; top:55px;font-size: 30px; color: #FFFFFF"> Maheen</a>  -->
+        <!-- </div>        -->
+        <form class="navbar-form pull-right">
+              <div class="dropdown">
+                <a href="#" style="color:#FFFFFF; font-size:50px; margin-right: 20px;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> ? <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/Users/MaheenContractor/Documents/BBS screens/register.html">View Profile</a></li>
+                  <li><a href="/Users/MaheenContractor/Documents/BBS screens/register.html">Contact Us</a></li>
+                  <li><a href="/Users/MaheenContractor/Documents/BBS screens/register.html">Log Out</a></li>
+                </ul>
+              </div>
+        </form>
+        <span><img align="right" id= "globe" src="/Users/MaheenContractor/Documents/BBS screens/images/globe.png"></span>
+      </div>
+    </div>
+  </nav>
+
+	<center>
+		<h1>Contact Us</h1>
+	</center>
+	<div>
+		<br>
+		<br>
+		<p style="margin-right: 30px; margin-left: 30px; font-size: 20px;">
+			Please use the form below to get in touch with us. In the case of complaints and/or corporate enquiries, please provide as much information as possible, so we can address your query accordingly.
+		</p>
+		<section>
+			<form class="form-horizontal" method="post" name="name" id="name" enctype="multipart/form-data" > 
+            <br>
+            <div class="form-group">
+          		<label class="control-label col-sm-3">Name:<span class="text-danger"></span></label>
+		          <div class="col-md-15 col-sm-9">
+		              <div class="input-group">
+		              <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" value="">
+		            	</div>
+		           </div>
+        	</div> 
+
+        	<form class="form-horizontal" method="post" name="email" id="email" enctype="multipart/form-data" > 
+            <br>
+            <div class="form-group">
+          		<label class="control-label col-sm-3">Email address:<span class="text-danger"></span></label>
+		          <div class="col-md-15 col-sm-9">
+		              <div class="input-group">
+		              <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address" value="">
+		            	</div>
+		           </div>
+        	</div>
+
+        	<form class="form-horizontal" method="post" name="phone" id="phone" enctype="multipart/form-data" > 
+            <br>
+            <div class="form-group">
+          		<label class="control-label col-sm-3">Phone number:<span class="text-danger"></span></label>
+		          <div class="col-md-15 col-sm-9">
+		              <div class="input-group">
+		              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter your number" value="">
+		            	</div>
+		           </div>
+        	</div>
+        	<form class="form-horizontal" method="post" name="type" id="type" enctype="multipart/form-data">
+        	<br>
+        		<label class="control-label col-sm-3">Type:<span class="text-danger"></span></label>
+	         	 <div class="col-xs-8">
+	            	<div class="form-inline">
+	        			<div class="form-group">
+	                		<select name="type" class="form-control">
+			                  <option value="1" >Complaint </option><option value="2" >Feedback </option><option value="3" >General Inquiry </option>                </select>
+			            </div>
+			        </div>
+	            </div> 
+
+	        <form class="form-horizontal" method="post" name="message" id="message" enctype="multipart/form-data" > 
+            <br>
+            <br>
+            <br>
+            <div class="form-group">
+          		<label class="control-label col-sm-3">Message:<span class="text-danger"></span></label>
+		          <div class="col-md-15 col-sm-9">
+		              <div class="input-group">
+		              <textarea class="form-control" name="message" id="message" placeholder="Enter your message" value=""></textarea>
+		            	</div>
+		           </div>
+        	</div>
+        	</form>
+    		<center>
+		        <a href="/Users/MaheenContractor/Documents/BBS screens/feedback.html">
+		          <input name="Submit" type="submit" value="Submit" class="btn btn-primary">
+		        </a>
+      		</center>       
+		</section>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/Users/MaheenContractor/Documents/BBS screens/lib/bootstrap.min.js"></script>
+</body>
+</html>
