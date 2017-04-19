@@ -1,0 +1,21 @@
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 250px;
+  height: 70px;
+  cursor: pointer;
+  margin: 0 auto;
+  border: .5px solid rgb(255,69,0);
+  -webkit-border-radius: 40px;
+  border-radius: 35px;
+  font: normal 37px/70px "Domine Font Family", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 1px;
+  background: rgb(255,69,0);
+  margin-top: 20px;
+}
+
