@@ -1,0 +1,115 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='navbar.css')
+    link(rel='stylesheet', type='text/css', href='stylesheets/bootstrap.min.css')
+    title Contact Us
+  body(style='background-color: #424242; color: #FFFFFF')
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a(href='/')
+            img(src='images/BBS_logo2-4.png')
+        div
+          br
+          a(href='/')
+            .text(style='float: right; margin-top: 50px; font-size: 20px; color: #0B614B')
+              b Maheen
+            form.navbar-form.pull-right
+              .dropdown
+                a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | ? 
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/profile') View Profile
+                  li
+                    a(href='') Contact Us
+                  li
+                    a(href='/logout') Log Out
+            span
+              img#globe(align='right', src='images/globe.png')
+    .row
+      br
+      .col-md-8.col-sm-8
+        br
+        center
+          h1(style='margin-top: 1px') Contact Us
+        div
+          br
+          p(style='margin-left: 20px; font-size: 20px;')
+            | Please use the form below to get in touch with us. In the case of complaints and/or corporate enquiries, please provide as much information as possible, so we can address your query accordingly.
+          section(style='margin-left: 90px')
+            form#name.form-horizontal(method='post', name='name', enctype='multipart/form-data')
+              br
+              .form-group
+                label.control-label.col-sm-3
+                  | Name:
+                  span.text-danger
+                .col-md-15.col-sm-9
+                  .input-group
+                    input#name.form-control(type='text', name='name', placeholder='Enter your name', value='')
+              form#email.form-horizontal(method='post', name='email', enctype='multipart/form-data')
+                br
+                .form-group
+                  label.control-label.col-sm-3
+                    | Email address:
+                    span.text-danger
+                  .col-md-15.col-sm-9
+                    .input-group
+                      input#email.form-control(type='email', name='email', placeholder='Enter your email address', value='')
+                form#phone.form-horizontal(method='post', name='phone', enctype='multipart/form-data')
+                  br
+                  .form-group
+                    label.control-label.col-sm-3
+                      | Phone number:
+                      span.text-danger
+                    .col-md-15.col-sm-9
+                      .input-group
+                        input#phone.form-control(type='tel', name='phone', placeholder='Enter your number', value='')
+                  form#type.form-horizontal(method='post', name='type', enctype='multipart/form-data')
+                    br
+                    label.control-label.col-sm-3
+                      | Type:
+                      span.text-danger
+                    .col-xs-8
+                      .form-inline
+                        .form-group
+                          select.form-control(name='type')
+                            option(value='1') Complaint 
+                            option(value='2') Feedback 
+                            option(value='3') General Inquiry 
+                    form#message.form-horizontal(method='post', name='message', enctype='multipart/form-data')
+                      br
+                      br
+                      br
+                      .form-group
+                        label.control-label.col-sm-3
+                          | Message:
+                          span.text-danger
+                        .col-md-15.col-sm-9
+                          .input-group
+                            textarea#message.form-control(name='message', placeholder='Enter your message', value='')
+                    br
+                    br
+                    div(style='margin-left:250px ')
+                      a(href='/Users/MaheenContractor/Documents/BBS screens/feedback.html')
+                        input.btn.btn-primary(name='Submit', type='submit', value='Submit')
+      .col-md-3.col-sm-3
+        center
+          h1  About Us 
+        br
+        center
+          p(style='font-size: 20px')
+            | BBS is a platform designed to connect buyers and sellers from the LUMS community. With BBS, you can buy, borrow and sell anything that exists in the world (well, within the LUMS community). They can range from mobile phones to calculators to sleeping bags. Once you have selected a product you want to buy, use the contact information available on the ad to contact the seller. 
+            br
+          p(style='font-size: 25px')
+            | BBS. Simple. Hassle-free. No Yaind.
+          br
+          br
+          p
+            | Note: BBS is not responsible for any damaged goods. No monetary transactions can be carried out using the website.
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')
+

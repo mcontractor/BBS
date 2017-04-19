@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title BBS
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    link(href='stylesheets/bootstrap-glyphicons.css', rel='stylesheet')
+    link(href='stylesheets/bootstrap.min.css', rel='stylesheet')
+
+  body(style='background-color: #424242')
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a(href='/')
+            img(src='images/BBS_logo2-4.png')
+
+    .container(style='margin-top: 100px')
+      center
+        h1(style='color: #FFFFFF')
+          | You have successfully logged out. Thank you for using BBS.
+    script(src='http://code.jquery.com/jquery.js')
+    script.
+      window.jQuery || document.write('<script src="javascripts/jquery-1.8.2.min.js"><\\/script>')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')
+
