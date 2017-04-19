@@ -17,7 +17,11 @@ var upload_requests = require('./routes/upload_requests');
 var confirmation = require('./routes/confirmation');
 var single_ad = require('./routes/single_ad');
 var profile = require('./routes/profile');
-
+var community = require('./routes/community');
+var main = require('./routes/main');
+var borrowscreen = require('./routes/borrowscreen');
+var buyscreen = require('./routes/buyscreen');
+var feedback = require('./routes/feedback');
 
 var app = express();
 
@@ -42,6 +46,11 @@ app.use('/upload_requests',upload_requests);
 app.use('/confirmation',confirmation);
 app.use('/single_ad',single_ad);
 app.use('/profile',profile);
+app.use('/community',community);
+app.use('/main',main);
+app.use('/borrowscreen',borrowscreen);
+app.use('/buyscreen',buyscreen);
+app.use('/feedback',feedback);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

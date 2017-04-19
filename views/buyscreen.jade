@@ -1,0 +1,73 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Buy
+    link(href='stylesheets/bootstrap.css', rel='stylesheet')
+  body(style='background: white')
+    nav.navbar.navbar-inverse
+      .container-fluid
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          a(href='/main')
+            img(src='/images/BBS_logo2-4.png')
+        div
+          br
+          // <div style="background-image:url(/Users/MaheenContractor/Documents/BBS screens/images/circle.png)">
+          a(href='/register')
+            // <img align="right" id= "profile" src="/Users/MaheenContractor/Documents/BBS screens/images/circle.png"></a>
+            .text(style='float: right; margin-top: 50px; font-size: 20px; color: #0B614B')
+              b Maheen
+            //
+              <a href="/register" style="position: relative;left: 920px; top:55px;font-size: 30px; color: #FFFFFF"> Maheen</a>
+              <!- </div>
+            form.navbar-form.pull-right
+              .dropdown
+                a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | ? 
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/contact_us') About Us
+                  li
+                    a(href='/contact_us') Contact Us
+                  li
+                    a(href='/logout') Log Out
+            span
+              a(href='/community')
+              img#globe(align='right', src='/images/globe.png')
+      // /.container-fluid
+    script(src='/javascripts/jquery.min.js')
+    // Include all compiled plugins (below), or include individual files as needed
+    script(src='/javascripts/bootstrap.min.js')
+    div
+      div
+        h3(style='color: #0B614B;text-align: center;margin-bottom: 30px') BUY
+        center
+          #custom-search-input
+            .input-group.col-md-5
+              input.search-query.form-control(type='text', placeholder='Search')
+              span.input-group-btn
+                button.btn.btn-danger(type='button')
+                  img(src='images/search.png', style='width:10px;height: 10px')
+              select.form-control(name='mm', style='width:90px;margin-left: 20px')
+                option(value='0') ALL
+                option(value='1') Electronics 
+                option(value='2') Trip Gear 
+                option(value='3') Stationary 
+                option(value='4') Books 
+                option(value='5') Cars 
+                option(value='6') Other 
+    // CODE HAS TO BR REMOVED
+    div(style='margin-top: 30px;background-color: red;width: 100%;height: auto;margin-left: 80px')
+      center
+        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+          img.img-responsive(src='http://fakeimg.pl/365x365/')
+        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.sprinkle
+          img.img-responsive(src='http://fakeimg.pl/365x365/')
+        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+          img.img-responsive(src='http://fakeimg.pl/365x365/')
+        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+          img.img-responsive(src='http://fakeimg.pl/365x365/')
+        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+          img.img-responsive(src='http://fakeimg.pl/365x365/')
