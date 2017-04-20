@@ -1,0 +1,88 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Profile
+    link(href='stylesheets/bootstrap.css', rel='stylesheet')
+    link(href='stylesheets/borrowscreen.css', rel='stylesheet')
+    style.
+      .round {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 150px;
+      height: 150px;
+      }
+      .round img {
+      display: block;
+      min-width: 100%;
+      min-height: 100%;
+      }
+  body(style='background: white')
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a(href='/main')
+            img(src='images/BBS_logo2-4.png')
+        div
+          br
+          a(href='')
+            .text(style='float: right; margin-top: 50px; font-size: 20px; color: #0B614B')
+              b Maheen
+            form.navbar-form.pull-right
+              .dropdown
+                a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | ? 
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/contact_us') About Us
+                  li
+                    a(href='/contact_us') Contact Us
+                  li
+                    a(href='/logout') Log Out
+            span
+              a(href = "/community")
+                img#globe(align='right', src='images/globe.png')
+      // /.container-fluid
+    .col-md-3
+      center
+        .round
+          img(src='images/dp.jpg')
+      h3(style='text-align: center;') User rating: 
+      h3(style='text-align: center;') User points: 
+      .col-md-12(style='margin-top: 20px')
+        a.btn.btn-primary.btn-lg.btn-block.btn-huge(href='#') Change Password
+      .col-md-12(style='margin-top: 20px')
+        a.btn.btn-primary.btn-lg.btn-block.btn-huge(href='#') Change Picture
+      .enjoy-css(style='margin-top: 200px') Report
+    .col-md-8(style='')
+      div(style='margin-top: 30px;margin-bottom: 20px;width: 100%;height: auto;')
+        h2(style='margin-top: 10px;margin-bottom: 20px') Your ads
+        center
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.sprinkle
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+      div(style='margin-top: 30px;margin-bottom: 20px;width: 100%;height: auto;margin-left: 80px;float: right')
+        h2(style='margin-top: 10px;margin-bottom: 20px') Your requests
+        center
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.sprinkle
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    // Include all compiled plugins (below), or include individual files as needed
+    script(src='javascripts/bootstrap.min.js')
+

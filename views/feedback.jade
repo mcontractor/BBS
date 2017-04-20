@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', href='stylesheets/bootstrap.min.css')
+    title confirmation
+  body(style='background-color: #424242')
+    nav.navbar.navbar-inverse
+      .container-fluid
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          a(href='/main')
+            img(src='images/BBS_logo2-4.png')
+        div
+          br
+          a(href='/profile')
+            .text(style='float: right; margin-top: 50px; font-size: 20px; color: #0B614B')
+              b Maheen
+            //
+              <a href="/Users/MaheenContractor/Documents/BBS screens/register.html" style="position: relative;left: 920px; top:55px;font-size: 30px; color: #FFFFFF"> Maheen</a>
+              <!- </div>
+            form.navbar-form.pull-right
+              .dropdown
+                a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | ? 
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/contact_us') About Us
+                  li
+                    a(href='/contact_us') Contact Us
+                  li
+                    a(href='/logout') Log Out
+            span
+              a(href = '/community')
+                img#globe(align='right', src='images/globe.png')
+
+    br
+    br
+    div(style='margin-top: 200px; margin-right: 30px; margin-left: 30px; color: #FFFFFF')
+      center
+        h1  Thank you for submitting. Your message has been sent to the Admin.
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')
+

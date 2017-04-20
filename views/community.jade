@@ -1,0 +1,130 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Community
+    link(href='stylesheets/bootstrap.css', rel='stylesheet')
+  nav.navbar.navbar-inverse
+    .container-fluid
+      // Brand and toggle get grouped for better mobile display
+      .navbar-header
+        a(href='/main')
+          img(src='images/BBS_logo2-4.png')
+      div
+        br
+        a(href='/profile')
+          .text(style='float: right; margin-top: 50px; font-size: 20px; color: #0B614B')
+            b Maheen
+          form.navbar-form.pull-right
+            .dropdown
+              a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                | ? 
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='/contact_us') About Us
+                li
+                  a(href='/contact_us') Contact Us
+                li
+                  a(href='/logout') Log Out
+          span
+            a(href ='')
+              img#globe(align='right', src='images/globe.png')
+    // /.container-fluid
+  script(src='js/jquery.min.js')
+  // Include all compiled plugins (below), or include individual files as needed
+  script(src='javascripts/bootstrap.min.js')
+  div
+    div
+      h3(style='color: #0B614B;text-align: center;margin-bottom: 30px') COMMUNITY
+      center
+        #custom-search-input
+          .input-group.col-md-5
+            input.search-query.form-control(type='text', placeholder='Search for members')
+            span.input-group-btn
+              button.btn.btn-danger(type='button')
+                img(src='images/search.png', style='width:10px;height: 10px')
+  .row(style='margin-top: 40px;color: #0B614B;padding-left: 200px')
+    center
+      .col-md-3
+        h3 TOP USER POINTS
+        ul(style='list-style: none;')
+          li user1
+          li user2
+          li user3
+          li user4
+          li user5
+          li user6
+      .col-md-3
+        h3 TOP USER RATINGS
+        ul(style='list-style: none;')
+          li user1
+          li user2
+          li user3
+          li user4
+          li user5
+          li user6
+      .col-xs-7.col-md-offset-0.col-md-6.col-lg-4.col-lg-offset-0
+        .panel.panel-primary
+          .panel-heading
+            span.glyphicon.glyphicon-comment
+            |  Comments
+            .btn-group.pull-right
+          .panel-body.body-panel
+            ul.chat
+              li.left.clearfix
+                span.chat-img.pull-left
+                  img.img-circle(src='http://placehold.it/50/55C1E7/fff&text=U', alt='User Avatar')
+                .chat-body.clearfix
+                  .header
+                    strong.primary-font Jack Sparrow
+                    small.pull-right.text-muted
+                      span.glyphicon.glyphicon-time
+                      | 12 mins ago
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                    | dolor, quis ullamcorper ligula sodales.
+              li.right.clearfix
+                span.chat-img.pull-right
+                  img.img-circle(src='http://placehold.it/50/FA6F57/fff&text=ME', alt='User Avatar')
+                .chat-body.clearfix
+                  .header
+                    small.text-muted
+                      span.glyphicon.glyphicon-time
+                      | 13 mins ago
+                    strong.pull-right.primary-font Bhaumik Patel
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                    | dolor, quis ullamcorper ligula sodales.
+              li.left.clearfix
+                span.chat-img.pull-left
+                  img.img-circle(src='http://placehold.it/50/55C1E7/fff&text=U', alt='User Avatar')
+                .chat-body.clearfix
+                  .header
+                    strong.primary-font Jack Sparrow
+                    small.pull-right.text-muted
+                      span.glyphicon.glyphicon-time
+                      | 14 mins ago
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                    | dolor, quis ullamcorper ligula sodales.
+              li.right.clearfix
+                span.chat-img.pull-right
+                  img.img-circle(src='http://placehold.it/50/FA6F57/fff&text=ME', alt='User Avatar')
+                .chat-body.clearfix
+                  .header
+                    small.text-muted
+                      span.glyphicon.glyphicon-time
+                      | 15 mins ago
+                    strong.pull-right.primary-font Bhaumik Patel
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                    | dolor, quis ullamcorper ligula sodales.
+          .panel-footer.clearfix
+            textarea.form-control(rows='3')
+            span.col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-3.col-xs-12(style='margin-top: 10px')
+              button#btn-chat.btn.btn-warning.btn-lg.btn-block Send
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+  // Include all compiled plugins (below), or include individual files as needed
+  script(src='javascripts/bootstrap.min.js')
+

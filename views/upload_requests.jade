@@ -1,0 +1,107 @@
+doctype html
+html(lang='en')
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet', type='text/css', href='stylesheets/bootstrap.min.css')
+    title Borrow
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a(href='/main')
+            img(src='images/BBS_logo2-4.png')
+        div
+          br
+          a(href='/profile')
+            .text(style='float: right; margin-top: 50px; font-size: 20px; color: #0B614B')
+              b Maheen
+            form.navbar-form.pull-right
+              .dropdown
+                a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | ? 
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/contact_us') About Us
+                  li
+                    a(href='/contact_us') Contact Us
+                  li
+                    a(href='/logout') Log Out
+            span
+              img#globe(align='right', src='images/globe.png')
+      // /.container-fluid
+    .w3-container(style='background-color: #424242; color: #FFFFFF')
+      center
+        h1 Upload A Request
+    br
+    section
+      hr
+      form#sellAd.form-horizontal(method='post', name='sellAd', enctype='multipart/form-data')
+        br
+        .form-group
+          label.control-label.col-sm-3
+            | Request Title:
+            span.text-danger
+          .col-md-15.col-sm-9
+            .input-group
+              input#pname.form-control(type='text', name='pname', placeholder='Enter the Ad title', value='')
+        .form-group
+          label.control-label.col-sm-3
+            | Product Name:
+            span.text-danger
+          .col-md-15.col-sm-9
+            .input-group
+              input#pname.form-control(type='text', name='pname', placeholder='Enter the name', value='')
+        br
+        label.control-label.col-sm-3
+          | Category 
+          span.text-danger
+        .col-xs-8
+          .form-inline
+            .form-group
+              select.form-control(name='category')
+                option(value='1') Electronics 
+                option(value='2') Trip Gear 
+                option(value='3') Stationary 
+                option(value='4') Books 
+                option(value='5') Cars 
+                option(value='6') Other 
+        .form-group
+          br
+          br
+          br
+          label.control-label.col-sm-3 Product Photo
+          .col-md-5.col-sm-8
+            .input-group
+              span#file_upload.input-group-addon
+                i.glyphicon.glyphicon-upload
+              input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
+            .input-group
+              span#file_upload.input-group-addon
+                i.glyphicon.glyphicon-upload
+              input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
+            .input-group
+              span#file_upload.input-group-addon
+                i.glyphicon.glyphicon-upload
+              input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
+        .form-group
+          label.control-label.col-sm-3
+            | Product Description:
+            span.text-danger
+          .col-md-15.col-sm-9
+            .input-group
+              input#pname.form-control(type='text', name='pname', placeholder='Describe the Product', value='')
+        .form-group
+          label.control-label.col-sm-3
+            | Contact Information:
+            span.text-danger
+          .col-md-15.col-sm-9
+            .input-group
+              input#pname.form-control(type='text', name='pname', placeholder='Enter your Information', value='')
+      center
+        a(href='/confirmation')
+          input.btn.btn-primary(name='Submit', type='submit', value='Submit')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')
+
