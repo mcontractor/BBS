@@ -18,7 +18,7 @@ html(lang='en')
             h1.entry-title
               span Register
             hr
-            form#register.form-horizontal(method='post', name='register', enctype='multipart/form-data')
+            form#register.form-horizontal(role = 'form',method='post', name='register', action='/signup/submit')
               .form-group
                 label.control-label.col-sm-3
                   | Email ID 
@@ -192,12 +192,12 @@ html(lang='en')
                     span#file_upload.input-group-addon
                       i.glyphicon.glyphicon-upload
                     input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
-        .form-group
-          .col-xs-offset-3.col-xs-10
-      div
-        center
-          form(action='/security_code')
-            input.btn.btn-primary(name='Submit', type='submit', value='Sign Up')
+              .form-group
+                .col-xs-offset-3.col-xs-10
+                  div
+                    center
+                      input.btn.btn-primary(name='Submit', type='submit', value='Sign Up')
+      
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     // Include all compiled plugins (below), or include individual files as needed

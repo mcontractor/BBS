@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.post('/submit',function(req,res,next){
+	console.log(req.body.email + " " + req.body.password);
+	res.redirect('/main');
+})
+
 module.exports = router;
