@@ -2,16 +2,18 @@ doctype html
 html(lang='en')
   head
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', type='text/css', href='stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
     title
       | Security check
   body
     nav.navbar.navbar-inverse
       .container-fluid
+        // Brand and toggle get grouped for better mobile display
         .navbar-header
-          a(href='/')
-            img(src='images/BBS_logo2-4.png')
-
+          a(href='/home')
+            img(src='/images/BBS_logo2-4.png')
+      // /.container-fluid
+    div
     p
       br
       center
@@ -20,14 +22,13 @@ html(lang='en')
     br
     br
     br
-    center
-      textarea#code1(,='', rows='1', cols='1')
-      textarea#code2(,='', rows='1', cols='1')
-      textarea#code3(,='', rows='1', cols='1')
-      textarea#code4(,='', rows='1', cols='1')
-    br
-    br
-    center
-      input.btn.btn-primary(type='submit', name='Submit')
+    form(role = 'form',method='post', name='sec', action='/security_code/submit')
+      center
+        input#code1(type='text', name='verfcode', maxlength = '4')
+      br
+      br
+      center
+        input.btn.btn-primary(type='submit', name='Submit')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    // Include all compiled plugins (below), or include individual files as needed
     script(src='javascripts/bootstrap.min.js')

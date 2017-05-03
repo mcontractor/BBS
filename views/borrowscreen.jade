@@ -31,7 +31,7 @@ html(lang='en')
                     a(href='/logout') Log Out
             span
               a(href='/community')
-              img#globe(align='right', src='/images/globe.png')
+                img#globe(align='right', src='/images/globe.png')
     script(src='/javascripts/jquery.min.js')
     script(src='/javascripts/bootstrap.min.js')
     div
@@ -45,23 +45,24 @@ html(lang='en')
                 button.btn.btn-danger(type='button')
                   img(src='/images/search.png', style='width:10px;height: 10px')
               select.form-control(name='mm', style='width:90px;margin-left: 20px')
-                option(value='0') ALL
-                option(value='1') Electronics 
-                option(value='2') Trip Gear 
-                option(value='3') Stationary 
-                option(value='4') Books 
-                option(value='5') Cars 
-                option(value='6') Other 
-    .enjoy-css Post request
-    div(style='margin-top: 30px;background-color: red;width: 100%;height: auto;margin-left: 80px')
-      center
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.sprinkle
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
+                option(value='ALL') ALL
+                option(value='Electronics') Electronics 
+                option(value='Trip Gear') Trip Gear 
+                option(value='Stationary') Stationary 
+                option(value='Books') Books 
+                option(value='Cars') Cars 
+                option(value='Other') Other
+    a(href = '/upload_requests', style='color:red')
+      .enjoy-css Post Request
+      div(style='margin-top: 30px;background-color: black;width: 100%;height: auto;margin-left: 80px')
+        center
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.sprinkle
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')
+          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
+            img.img-responsive(src='http://fakeimg.pl/365x365/')

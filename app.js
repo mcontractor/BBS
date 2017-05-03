@@ -10,6 +10,7 @@ var mongodb = require('mongodb');
 var index = require('./routes/index');
 var signup = require('./routes/signup');
 var login = require('./routes/login');
+var login2 = require('./routes/login2');
 var security_code = require('./routes/security_code');
 var contact_us = require('./routes/contact_us');
 var logout = require('./routes/logout');
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/signup',signup);
 app.use('/login',login);
+app.use('/login2',login2);
 app.use('/security_code',security_code);
 app.use('/contact_us',contact_us);
 app.use('/logout',logout);
@@ -54,6 +56,7 @@ app.use('/main',main);
 app.use('/borrowscreen',borrowscreen);
 app.use('/buyscreen',buyscreen);
 app.use('/feedback',feedback);
+
 
 
 

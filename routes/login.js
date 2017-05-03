@@ -7,8 +7,29 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/submit',function(req,res,next){
-	console.log(req.body.email + " " + req.body.password);
-	res.redirect('/main');
+	var MongoClient = require('mongodb').MongoClient;
+	var url = 'mongodb://127.0.0.1:27017/BBS';
+
+	MongoClient.connect(url, function(err, db) {
+
+	    var cursor = db.collection('users').find({'email':req.body.email});
+	    var email = req.body.email;
+	    module.exports.email = email;
+	    cursor.each(function(err, doc) {
+	    	console.log(doc)
+	    	if(doc != null){
+	    		if(doc.email == email && doc.password == req.body.password){
+					res.redirect('/main');
+	    		}
+	    		else{
+					res.redirect('/login2');
+	    		}
+	    	}
+
+	    });
+	}); 	
+
+
 })
 
 module.exports = router;

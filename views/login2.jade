@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title BBS
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    link(href='stylesheets/bootstrap.min.css', rel='stylesheet')
+
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a(href='/')
+            img(src='images/BBS_logo2-4.png')
+
+    .container(style='margin-top: 100px')
+      .row(style='margin-top:5px')
+        .col-xs-12.col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-3
+          form#login(role='form', method='post', action='/login2/submit')
+            fieldset
+              center
+                h2 Log In
+              hr.colorgraph
+              .alert.alert-error
+                a.close(data-dismiss='alert',style='fontsize:20px' href='#') ×
+                | Invaild Username or Password!
+              .form-group
+                input#email.form-control.input-lg(type='email', name='email', placeholder='Email Address')
+              .form-group
+                input#password.form-control.input-lg(type='password', name='password', placeholder='Password')
+              hr.colorgraph
+              .row
+                div
+                  center
+                    input.btn.btn-lg.btn-success.btn-block(type='submit', value='Log in ')
+                    
+
+    script(src='http://code.jquery.com/jquery.js')
+      window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\\/script>')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')

@@ -29,6 +29,7 @@ html(lang='en')
                   li
                     a(href='/logout') Log Out
             span
+              a(href='/community')
               img#globe(align='right', src='images/globe.png')
     .w3-container(style='background-color: #424242; color: #FFFFFF')
       center
@@ -36,7 +37,7 @@ html(lang='en')
     br
     section
       hr
-      form#sellAd.form-horizontal(method='post', name='sellAd', enctype='multipart/form-data')
+      form#sellAd.form-horizontal(role = 'form',method='post', name='sell', action='/upload_ad/submit')
         br
         .form-group
           label.control-label.col-sm-3
@@ -44,7 +45,7 @@ html(lang='en')
             span.text-danger
           .col-md-15.col-sm-9
             .input-group
-              input#pname.form-control(type='text', name='pname', placeholder='Enter the Ad title', value='')
+              input#pname.form-control(type='text', name='title', placeholder='Enter the Ad title', value='')
         .form-group
           label.control-label.col-sm-3
             | Product Name:
@@ -60,12 +61,12 @@ html(lang='en')
           .form-inline
             .form-group
               select.form-control(name='category')
-                option(value='1') Electronics 
-                option(value='2') Trip Gear 
-                option(value='3') Stationary 
-                option(value='4') Books 
-                option(value='5') Cars 
-                option(value='6') Other 
+                option(value='Electronics') Electronics 
+                option(value='Trip Gear') Trip Gear 
+                option(value='Stationary') Stationary 
+                option(value='Books') Books 
+                option(value='Cars') Cars 
+                option(value='Other') Other 
         .form-group
           br
           br
@@ -84,31 +85,32 @@ html(lang='en')
               span#file_upload.input-group-addon
                 i.glyphicon.glyphicon-upload
               input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
-        form#sellAd.form-horizontal(method='post', name='sellAd', enctype='multipart/form-data')
-          .form-group
-            label.control-label.col-sm-3
-              | Price: Rs.
-              span.text-danger
-            .col-md-15.col-sm-9
-              .input-group
-                textarea#code1(,='', rows='1', cols='4')
-          .form-group
-            label.control-label.col-sm-3
-              | Product Description:
-              span.text-danger
-            .col-md-15.col-sm-9
-              .input-group
-                input#pname.form-control(type='text', name='pname', placeholder='Describe the Product', value='')
-          .form-group
-            label.control-label.col-sm-3
-              | Contact Information:
-              span.text-danger
-            .col-md-15.col-sm-9
-              .input-group
-                input#pname.form-control(type='text', name='pname', placeholder='Enter your Information', value='')
-        center
-          a(href='/confirmation')
-            input.btn.btn-primary(name='Submit', type='submit', value='Submit')
+              br
+        .form-group
+          label.control-label.col-sm-3
+            | Price: Rs.
+            span.text-danger
+          .col-md-15.col-sm-9
+            .input-group
+              textarea#code1(name='price', rows='1', cols='4')
+        .form-group
+          label.control-label.col-sm-3
+            | Product Description:
+            span.text-danger
+          .col-md-15.col-sm-9
+            .input-group
+              input#pname.form-control(type='text', name='description', placeholder='Describe the Product', value='')
+        .form-group
+          label.control-label.col-sm-3
+            | Contact Information:
+            span.text-danger
+          .col-md-15.col-sm-9
+            .input-group
+              input#pname.form-control(type='text', name='contact', placeholder='Enter your Information', value='')
+        .form-group
+          div
+            center
+              input.btn.btn-primary(name='Submit', type='submit', value='Submit')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     script(src='javascripts/bootstrap.min.js')
 
