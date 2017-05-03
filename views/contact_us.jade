@@ -42,7 +42,7 @@ html
           p(style='margin-left: 20px; font-size: 20px;')
             | Please use the form below to get in touch with us. In the case of complaints and/or corporate enquiries, please provide as much information as possible, so we can address your query accordingly.
           section(style='margin-left: 90px')
-            form#name.form-horizontal(method='post', name='name', enctype='multipart/form-data')
+            form#name.form-horizontal(role = 'form',method='post', name='message', action='/contact_us/submit')
               br
               .form-group
                 label.control-label.col-sm-3
@@ -51,52 +51,46 @@ html
                 .col-md-15.col-sm-9
                   .input-group
                     input#name.form-control(type='text', name='name', placeholder='Enter your name', value='')
-              form#email.form-horizontal(method='post', name='email', enctype='multipart/form-data')
-                br
-                .form-group
-                  label.control-label.col-sm-3
-                    | Email address:
-                    span.text-danger
-                  .col-md-15.col-sm-9
-                    .input-group
-                      input#email.form-control(type='email', name='email', placeholder='Enter your email address', value='')
-                form#phone.form-horizontal(method='post', name='phone', enctype='multipart/form-data')
-                  br
-                  .form-group
-                    label.control-label.col-sm-3
-                      | Phone number:
-                      span.text-danger
-                    .col-md-15.col-sm-9
-                      .input-group
-                        input#phone.form-control(type='tel', name='phone', placeholder='Enter your number', value='')
-                  form#type.form-horizontal(method='post', name='type', enctype='multipart/form-data')
-                    br
-                    label.control-label.col-sm-3
-                      | Type:
-                      span.text-danger
-                    .col-xs-8
-                      .form-inline
-                        .form-group
-                          select.form-control(name='type')
-                            option(value='1') Complaint 
-                            option(value='2') Feedback 
-                            option(value='3') General Inquiry 
-                    form#message.form-horizontal(method='post', name='message', enctype='multipart/form-data')
-                      br
-                      br
-                      br
-                      .form-group
-                        label.control-label.col-sm-3
-                          | Message:
-                          span.text-danger
-                        .col-md-15.col-sm-9
-                          .input-group
-                            textarea#message.form-control(name='message', placeholder='Enter your message', value='')
-                    br
-                    br
-                    div(style='margin-left:250px ')
-                      a(href='/feedback')
-                        input.btn.btn-primary(name='Submit', type='submit', value='Submit')
+              br
+              .form-group
+                label.control-label.col-sm-3
+                  | Email address:
+                  span.text-danger
+                .col-md-15.col-sm-9
+                  .input-group
+                    input#email.form-control(type='email', name='email', placeholder='Enter your email address', value='')
+              br
+              .form-group
+                label.control-label.col-sm-3
+                  | Phone number:
+                  span.text-danger
+                .col-md-15.col-sm-9
+                  .input-group
+                    input#phone.form-control(type='tel', name='phone', placeholder='Enter your number', value='')
+              br
+              .form-group
+                label.control-label.col-sm-3
+                  | Type:
+                  span.text-danger
+                .col-xs-8
+                  .form-inline
+                    select.form-control(name='type')
+                      option(value='Complaint') Complaint 
+                      option(value='Feedback') Feedback 
+                      option(value='General Inquiry') General Inquiry 
+              br
+              .form-group
+                label.control-label.col-sm-3
+                  | Message:
+                  span.text-danger
+                .col-md-15.col-sm-9
+                  .input-group
+                    input#message.form-control(type='text',name='message', placeholder='Enter your message', value='')
+              br
+              br
+              .form-group
+                div(style='margin-left:250px ')
+                  input.btn.btn-primary(name='Submit', type='submit', value='Submit')
       .col-md-3.col-sm-3
         center
           h1  About Us 
