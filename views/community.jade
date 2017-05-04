@@ -4,11 +4,15 @@ html(lang='en')
     meta(charset='utf-8')
     title Community
     link(href='stylesheets/bootstrap.css', rel='stylesheet')
+    style.
+      body {
+      margin-top:30px;
+      }
   nav.navbar.navbar-inverse
     .container-fluid
       // Brand and toggle get grouped for better mobile display
       .navbar-header
-        a(href='/main')
+        a(href='/')
           img(src='images/BBS_logo2-4.png')
       div
         br
@@ -28,12 +32,8 @@ html(lang='en')
                 li
                   a(href='/logout') Log Out
           span
-            a(href ='')
-              img#globe(align='right', src='images/globe.png')
+            img#globe(align='right', src='/images/globe.png')
     // /.container-fluid
-  script(src='js/jquery.min.js')
-  // Include all compiled plugins (below), or include individual files as needed
-  script(src='javascripts/bootstrap.min.js')
   div
     div
       h3(style='color: #0B614B;text-align: center;margin-bottom: 30px') COMMUNITY
@@ -43,7 +43,7 @@ html(lang='en')
             input.search-query.form-control(type='text', placeholder='Search for members')
             span.input-group-btn
               button.btn.btn-danger(type='button')
-                img(src='images/search.png', style='width:10px;height: 10px')
+                img(src='/images/search.png', style='width:10px;height: 10px')
   .row(style='margin-top: 40px;color: #0B614B;padding-left: 200px')
     center
       .col-md-3
@@ -64,67 +64,67 @@ html(lang='en')
           li user4
           li user5
           li user6
-      .col-xs-7.col-md-offset-0.col-md-6.col-lg-4.col-lg-offset-0
-        .panel.panel-primary
-          .panel-heading
-            span.glyphicon.glyphicon-comment
-            |  Comments
-            .btn-group.pull-right
-          .panel-body.body-panel
-            ul.chat
-              li.left.clearfix
-                span.chat-img.pull-left
-                  img.img-circle(src='http://placehold.it/50/55C1E7/fff&text=U', alt='User Avatar')
-                .chat-body.clearfix
-                  .header
-                    strong.primary-font Jack Sparrow
-                    small.pull-right.text-muted
-                      span.glyphicon.glyphicon-time
-                      | 12 mins ago
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                    | dolor, quis ullamcorper ligula sodales.
-              li.right.clearfix
-                span.chat-img.pull-right
-                  img.img-circle(src='http://placehold.it/50/FA6F57/fff&text=ME', alt='User Avatar')
-                .chat-body.clearfix
-                  .header
-                    small.text-muted
-                      span.glyphicon.glyphicon-time
-                      | 13 mins ago
-                    strong.pull-right.primary-font Bhaumik Patel
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                    | dolor, quis ullamcorper ligula sodales.
-              li.left.clearfix
-                span.chat-img.pull-left
-                  img.img-circle(src='http://placehold.it/50/55C1E7/fff&text=U', alt='User Avatar')
-                .chat-body.clearfix
-                  .header
-                    strong.primary-font Jack Sparrow
-                    small.pull-right.text-muted
-                      span.glyphicon.glyphicon-time
-                      | 14 mins ago
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                    | dolor, quis ullamcorper ligula sodales.
-              li.right.clearfix
-                span.chat-img.pull-right
-                  img.img-circle(src='http://placehold.it/50/FA6F57/fff&text=ME', alt='User Avatar')
-                .chat-body.clearfix
-                  .header
-                    small.text-muted
-                      span.glyphicon.glyphicon-time
-                      | 15 mins ago
-                    strong.pull-right.primary-font Bhaumik Patel
-                  p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                    | dolor, quis ullamcorper ligula sodales.
-          .panel-footer.clearfix
-            textarea.form-control(rows='3')
-            span.col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-3.col-xs-12(style='margin-top: 10px')
-              button#btn-chat.btn.btn-warning.btn-lg.btn-block Send
+      //
+        <div class="col-xs-7 col-md-offset-0 col-md-6 col-lg-4 col-lg-offset-0">
+        <div class="panel panel-primary">
+        <div class="panel-heading">
+        <span class="glyphicon glyphicon-comment"></span> Chat-Room
+        <div class="btn-group pull-right">
+        </div>
+        </div>
+        <div class="panel-body body-panel">
+        <ul class="chat">
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script>
+        $(function () {
+        var socket = io.connect('http://localhost:3000');
+        $('form').submit(function(){
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+        });
+        socket.on('chat message', function(msg){
+        $('#messages').append($('<li>').text(msg));
+        });
+        });
+        </script>
+        </ul>
+        </div>
+        <div class="panel-footer clearfix">
+        <textarea class="form-control" rows="3"></textarea>
+        <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
+        <button class="btn btn-warning btn-lg btn-block" id="btn-chat">Send</button>
+        </span>
+        </div>
+        </div>
+        </div>
+      .container
+        .row
+          .col-md-4
+            .well
+              h3  Online Users 
+              ul#users.list-group
+            .col-md-8
+              #chat.chat
+              form#messageform
+                .form-group
+                  label  Enter Message
+                  textarea#message.form-control
+                  br
+                  input.btn.btn-primary(type='submit',name='submit' value='Send Message')
+      script.
+        $(function() {
+        var socket = io.connect();
+        var $messageForm = $('#messageForm');
+        var $message = $('#message');
+        var $chat = $('#chat');
+        $messageForm.submit(function(e) {
+        e.preventDefault();
+        console.log('submitted');
+        });
+        });
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
   // Include all compiled plugins (below), or include individual files as needed
-  script(src='javascripts/bootstrap.min.js')
-
+  script(src='/javascripts/bootstrap.min.js')
+  script(src='/socket.io/socket.io.js')

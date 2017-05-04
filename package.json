@@ -15,6 +15,7 @@
     "serve-favicon": "~2.4.2",
     "nodemailer":"*",
     "kerberos":"~0.0.17",
-    "mongodb":"~2.2.26"
+    "mongodb":"~2.2.26",
+    "socket.io":"~1.7.3"
   }
 }

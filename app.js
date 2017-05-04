@@ -27,6 +27,10 @@ var feedback = require('./routes/feedback');
 
 var app = express();
 
+var server = require('http').createServer(app);  
+var io = require('socket.io')(server);
+
+module.exports.io = io;
 
 
 // view engine setup
@@ -59,7 +63,6 @@ app.use('/feedback',feedback);
 
 
 
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -77,5 +80,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
