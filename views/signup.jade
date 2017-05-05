@@ -174,15 +174,17 @@ html(lang='en')
                       i.glyphicon.glyphicon-phone
                     input#contactnum.form-control(type='text', name='contactnum', placeholder='Enter your Primary contact no.', value='')
               .form-group
-                label.control-label.col-sm-3
-                  | Profile Photo 
-                  br
-                  small (optional)
-                .col-md-5.col-sm-8
-                  .input-group
-                    span#file_upload.input-group-addon
-                      i.glyphicon.glyphicon-upload
-                    input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
+                form#upload.form-horizontal(role = 'form',action='/signup/upload',method='post' ,encType="multipart/form-data")
+                  label.control-label.col-sm-3
+                    | Profile Photo 
+                    br
+                    small (optional)
+                  .col-md-5.col-sm-8
+                    .input-group
+                      span#file_upload.input-group-addon
+                        i.glyphicon.glyphicon-upload
+                      input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
+                      input.btn.btn-primary(name='Upload', type='submit', value='Upload')
               .form-group
                 .col-xs-offset-3.col-xs-10
                   div

@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
 
 });
 
+
 router.post('/submit',function(req,res,next){
 	var MongoClient = require('mongodb').MongoClient;
 	var url = 'mongodb://127.0.0.1:27017/BBS';
@@ -22,6 +23,7 @@ router.post('/submit',function(req,res,next){
 					res.redirect('/main');
 	    		}
 	    		else{
+
 					res.redirect('/login2');
 	    		}
 	    	}

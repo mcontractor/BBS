@@ -26,14 +26,14 @@ var buyscreen = require('./routes/buyscreen');
 var feedback = require('./routes/feedback');
 var changePass = require('./routes/changePass');
 
+
 var app = express();
+// var server = require('http').createServer(app);  
+// var io = require('socket.io')(server);
 
-var server = require('http').createServer(app);  
-var io = require('socket.io')(server);
-
-module.exports.io = io;
-
-
+// app.locals({
+// 	login:"Error! Incorrect Username and/or Passowrd"
+// });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -64,6 +64,7 @@ app.use('/feedback',feedback);
 app.use('/changePass',changePass);
 
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -81,7 +82,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
 
 module.exports = app;

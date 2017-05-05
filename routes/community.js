@@ -1,5 +1,8 @@
 var express = require('express')
 var router = express.Router();
+
+// var io = require('socket.io')
+
 var app = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
@@ -14,6 +17,7 @@ router.get('/', function(req, res, next) {
 
 io.on('connection', function(socket) {
 	console.log("connected");
+	while (true) {}
 	connections.push(socket);
 	console.log('Connected: %s sockets connected', connections.length);
 
