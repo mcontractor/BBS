@@ -24,6 +24,7 @@ var main = require('./routes/main');
 var borrowscreen = require('./routes/borrowscreen');
 var buyscreen = require('./routes/buyscreen');
 var feedback = require('./routes/feedback');
+var changePass = require('./routes/changePass');
 
 var app = express();
 
@@ -60,7 +61,7 @@ app.use('/main',main);
 app.use('/borrowscreen',borrowscreen);
 app.use('/buyscreen',buyscreen);
 app.use('/feedback',feedback);
-
+app.use('/changePass',changePass);
 
 
 // catch 404 and forward to error handler

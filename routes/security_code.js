@@ -2,8 +2,6 @@ var express = require('express')
 var router = express.Router();
 var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
-var async = require('async')
-
 router.get('/', function(req, res, next) {
   res.render('security_code', { title: 'Security Check' });
 
@@ -14,7 +12,7 @@ router.post('/submit',function(req,res,next){
 	var email = require('./signup.js').email;	
 	var verf = require('./signup.js').verf;
 	var MongoClient = require('mongodb').MongoClient;
-	var check = 0
+	var check = 0;
 
 	if(req.body.verfcode == verf){
 		res.redirect('/main')
