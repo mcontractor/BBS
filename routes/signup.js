@@ -4,10 +4,7 @@ var mongodb = require('mongodb');
 var fileUpload = require('express-fileupload');
 var MongoClient = require('mongodb').MongoClient;
 var router = express.Router();
-var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
-
-router.use(fileUpload());
+var mkdirp = require('mkdirp');
 
 router.get('/', function(req, res, next) {
   res.render('signup', { title: 'Sign Up' });
@@ -24,10 +21,10 @@ let transporter = nodemailer.createTransport({
 });
 
 var rand_num = Math.floor((Math.random()*10000)+1000)
-router.post('/submit', upload.any(), function(req,res,next){
-	var email = req.body.email;
-	module.exports.email = email;
+router.post('/submit', function(req,res,next){
 	// MongoClient.connect('mongodb://127.0.0.1:27017/BBS'
+	var email = req.body.emailid;
+	module.exports.email = email;
 
  	var url = 'mongodb://127.0.0.1:27017/BBS';
 	MongoClient.connect(url, function(err, db){
@@ -55,11 +52,17 @@ router.post('/submit', upload.any(), function(req,res,next){
 						number : req.body.contactnum,
 						verfcode : rand_num
 					};
-					var email = req.body.emailid
-					module.exports.email = email;
 
 					var verf = rand_num
 					module.exports.verf = verf;
+
+					mkdirp(('ads/'+email), function(err) { 
+					    console.log('directory made')
+					});
+
+					mkdirp(('requests/'+email), function(err) { 
+					    console.log('directory made')
+					});
 					
 					users.insert([user1]);
 					db.close();

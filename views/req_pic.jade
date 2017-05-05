@@ -1,0 +1,54 @@
+doctype html
+html(lang='en')
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet', type='text/css', href='stylesheets/bootstrap.min.css')
+    title Sell
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a(href='/main')
+            img(src='images/BBS_logo2-4.png')
+        div
+          br
+          a(href='/profile')
+            .text(style='float: right; margin-top: 50px; font-size: 20px; color: #0B614B')
+              b Maheen
+            form.navbar-form.pull-right
+              .dropdown
+                a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | ? 
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/contact_us') About Us
+                  li
+                    a(href='/contact_us') Contact Us
+                  li
+                    a(href='/logout') Log Out
+            span
+              a(href='/community')
+              img#globe(align='right', src='images/globe.png')
+    .w3-container(style='background-color: #424242; color: #FFFFFF')
+      center
+        h1 Upload A Request
+      br
+    section
+      .container
+        h3.entry-title
+          span Please Upload Pictures For Your Requests
+        br
+        br
+        form#uploadForm(ref='uploadForm', action='/req_pic/upload', method='post', enctype='multipart/form-data')
+          input(type='file', name='1')
+          input(type='file', name='2')
+          input(type='file', name='3')
+          br
+          input.btn.btn-primary(type='submit', name='submit',value='Submit')
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    // Include all compiled plugins (below), or include individual files as needed
+    script(src='javascripts/bootstrap.min.js')
+

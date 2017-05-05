@@ -26,6 +26,10 @@ var buyscreen = require('./routes/buyscreen');
 var feedback = require('./routes/feedback');
 var changePass = require('./routes/changePass');
 var profile_picture = require('./routes/profile_picture');
+var ad_pic = require('./routes/ad_pic');
+var req_pic = require('./routes/req_pic');
+
+
 
 var app = express();
 
@@ -61,6 +65,8 @@ app.use('/buyscreen',buyscreen);
 app.use('/feedback',feedback);
 app.use('/changePass',changePass);
 app.use('/profile_picture',profile_picture);
+app.use('/ad_pic',ad_pic);
+app.use('/req_pic',req_pic);
 
 
 

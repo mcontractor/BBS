@@ -24,9 +24,12 @@ router.post('/submit',function(req,res,next){
 	    	contact : req.body.contact
 
 	    };
+	    var ad_name = req.body.pname;
+		module.exports.ad_name = ad_name;
+
 	    cursor.insert(ad);
 	    db.close();
-	    res.redirect('/confirmation');
+	    res.redirect('/ad_pic');
 	}); 	
 
 

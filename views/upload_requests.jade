@@ -53,38 +53,19 @@ html(lang='en')
           .col-md-15.col-sm-9
             .input-group
               input#pname.form-control(type='text', name='pname', placeholder='Enter the name', value='')
-        br
-        label.control-label.col-sm-3
-          | Category 
-          span.text-danger
-        .col-xs-8
-          .form-inline
-            .form-group
-              select.form-control(name='category')
-                option(value='Electronics') Electronics 
-                option(value='Trip Gear') Trip Gear 
-                option(value='Stationary') Stationary 
-                option(value='Books') Books 
-                option(value='Cars') Cars 
-                option(value='Other') Other  
         .form-group
-          br
-          br
-          br
-          label.control-label.col-sm-3 Product Photo
-          .col-md-5.col-sm-8
-            .input-group
-              span#file_upload.input-group-addon
-                i.glyphicon.glyphicon-upload
-              input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
-            .input-group
-              span#file_upload.input-group-addon
-                i.glyphicon.glyphicon-upload
-              input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
-            .input-group
-              span#file_upload.input-group-addon
-                i.glyphicon.glyphicon-upload
-              input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
+          label.control-label.col-sm-3
+            | Category 
+            span.text-danger
+          .col-xs-8
+            .form-inline
+                select.form-control(name='category')
+                  option(value='Electronics') Electronics 
+                  option(value='Trip Gear') Trip Gear 
+                  option(value='Stationary') Stationary 
+                  option(value='Books') Books 
+                  option(value='Cars') Cars 
+                  option(value='Other') Other 
         .form-group
           label.control-label.col-sm-3
             | Product Description:

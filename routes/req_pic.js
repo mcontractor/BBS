@@ -3,15 +3,18 @@ var router = express.Router();
 var fileUpload = require('express-fileupload');
 var fs = require('fs');
 var multer = require('multer');
+var mkdirp = require('mkdirp');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/')
+    var email = require('./login.js').email;
+    var name = require('./upload_requests.js').req_name;
+    mkdirp(('requests/'+email+'/'+name+'/'), function(err) { 
+    });
+    cb(null, 'requests/'+email+'/'+name+'/');
   },
   filename: function (req, file, cb) {
-  	var email = require('./signup.js').email;
-    cb(null, email + '.jpg');
-    console.log(email);
+    cb(null, file.fieldname + '.jpg');
   }
 })
 
@@ -19,12 +22,12 @@ var upload = multer({ storage: storage })
 
 
 router.get('/', function(req, res, next) {
-  res.render('profile_picture', { title: 'Profile Picture' });
+  res.render('req_pic', { title: 'Request Pictures' });
 
 });
 
 router.post('/upload',upload.any(), function(req, res) {
-	res.redirect('/security_code');
+	res.redirect('/confirmation');
 });
 
 module.exports = router;
