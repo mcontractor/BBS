@@ -4,14 +4,14 @@ var fileUpload = require('express-fileupload');
 var fs = require('fs');
 var multer = require('multer');
 
-var email = require('./signup').email;
-
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'uploads/')
   },
   filename: function (req, file, cb) {
+  	var email = require('./signup.js').email;
     cb(null, email + '.jpg');
+    console.log(email);
   }
 })
 
