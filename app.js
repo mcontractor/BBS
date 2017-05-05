@@ -30,7 +30,6 @@ var ad_pic = require('./routes/ad_pic');
 var req_pic = require('./routes/req_pic');
 
 
-
 var app = express();
 
 var dir = __dirname;

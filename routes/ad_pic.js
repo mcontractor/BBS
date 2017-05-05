@@ -7,7 +7,13 @@ var mkdirp = require('mkdirp');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    var email = require('./login.js').email;
+    var email;
+    if ((require('./login.js').email) != undefined ) {
+      email = require('./login.js').email;
+    }
+    else
+      email = require('./signup.js').email;
+    
     var name = require('./upload_ad.js').ad_name;
     mkdirp(('ads/'+email+'/'+name+'/'), function(err) { 
     });
