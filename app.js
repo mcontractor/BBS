@@ -25,15 +25,13 @@ var borrowscreen = require('./routes/borrowscreen');
 var buyscreen = require('./routes/buyscreen');
 var feedback = require('./routes/feedback');
 var changePass = require('./routes/changePass');
-
+var profile_picture = require('./routes/profile_picture');
 
 var app = express();
-// var server = require('http').createServer(app);  
-// var io = require('socket.io')(server);
 
-// app.locals({
-// 	login:"Error! Incorrect Username and/or Passowrd"
-// });
+var dir = __dirname;
+module.exports.dir = dir;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -62,6 +60,7 @@ app.use('/borrowscreen',borrowscreen);
 app.use('/buyscreen',buyscreen);
 app.use('/feedback',feedback);
 app.use('/changePass',changePass);
+app.use('/profile_picture',profile_picture);
 
 
 

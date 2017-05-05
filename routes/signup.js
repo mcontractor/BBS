@@ -25,6 +25,8 @@ let transporter = nodemailer.createTransport({
 
 var rand_num = Math.floor((Math.random()*10000)+1000)
 router.post('/submit', upload.any(), function(req,res,next){
+	var email = req.body.email;
+	module.exports.email = email;
 	// MongoClient.connect('mongodb://127.0.0.1:27017/BBS'
 
  	var url = 'mongodb://127.0.0.1:27017/BBS';
@@ -77,7 +79,7 @@ router.post('/submit', upload.any(), function(req,res,next){
 					    }
 					    console.log('Message %s sent: %s', info.messageId, info.response);
 					});
-					res.redirect('/security_code');
+					res.redirect('/profile_picture');
 			    });	    		
 	    	}
 	    	else{

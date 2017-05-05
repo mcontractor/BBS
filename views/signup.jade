@@ -3,7 +3,7 @@ html(lang='en')
   head
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', type='text/css', href='stylesheets/bootstrap.min.css')
-    title Admin
+    title Register
   body
     nav.navbar.navbar-inverse
       .container-fluid
@@ -174,22 +174,11 @@ html(lang='en')
                       i.glyphicon.glyphicon-phone
                     input#contactnum.form-control(type='text', name='contactnum', placeholder='Enter your Primary contact no.', value='')
               .form-group
-                form#upload.form-horizontal(role = 'form',action='/signup/upload',method='post' ,encType="multipart/form-data")
-                  label.control-label.col-sm-3
-                    | Profile Photo 
-                    br
-                    small (optional)
-                  .col-md-5.col-sm-8
-                    .input-group
-                      span#file_upload.input-group-addon
-                        i.glyphicon.glyphicon-upload
-                      input#file_nm.form-control.upload(type='file', name='file_nm', placeholder='', aria-describedby='file_upload')
-                      input.btn.btn-primary(name='Upload', type='submit', value='Upload')
-              .form-group
+                br
                 .col-xs-offset-3.col-xs-10
                   div
                     center
-                      input.btn.btn-primary(name='Submit', type='submit', value='Sign Up')
+                      input.btn.btn-primary(name='Submit', type='submit', value='Continue')
       
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
