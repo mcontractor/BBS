@@ -23,9 +23,11 @@ router.post('/submit',function(req,res,next){
 	    	contact : req.body.contact
 
 	    };
+	    var req_name = req.body.pname;
+		module.exports.req_name = req_name;
 	    cursor.insert(ad);
 	    db.close();
-	    res.redirect('/confirmation');
+	    res.redirect('/req_pic');
 	}); 	
 
 
