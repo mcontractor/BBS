@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var json_ads = require('./upload_ad.js').json_ads;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('buyscreen', { title: 'buyscreen' });
+  res.render('buyscreen', { title: 'buyscreen', array_ads: json_ads});
 });
 
 router.get('/submit',function(req,res,next){
@@ -38,8 +39,5 @@ router.get('/submit',function(req,res,next){
 		res.render('/buyscreen');	
 	}	
 
-})
-
-
-
+});
 module.exports = router;
