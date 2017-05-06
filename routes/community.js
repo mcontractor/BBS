@@ -11,7 +11,13 @@ var users = [];
 var connections = [];
 
 router.get('/', function(req, res, next) {
-  res.render('community', { title: 'Community' });
+	var name12;
+    if ((require('./login.js').name12) != undefined ) {
+      name12 = require('./login.js').name12;
+    }
+    else
+      name12 = require('./signup.js').name12;
+  res.render('community', { title: 'Community', name122:name12 });
 
 });
 

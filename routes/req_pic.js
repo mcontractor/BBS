@@ -28,7 +28,13 @@ var upload = multer({ storage: storage })
 
 
 router.get('/', function(req, res, next) {
-  res.render('req_pic', { title: 'Request Pictures' });
+  var name12;
+    if ((require('./login.js').name12) != undefined ) {
+      name12 = require('./login.js').name12;
+    }
+    else
+      name12 = require('./signup.js').name12;
+  res.render('req_pic', { title: 'Request Pictures',name122:name12 });
 
 });
 

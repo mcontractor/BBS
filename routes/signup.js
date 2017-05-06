@@ -27,6 +27,9 @@ router.post('/submit', function(req,res,next){
 	var email = req.body.emailid;
 	module.exports.email = email;
 
+	var name12 = req.body.mem_name;
+	module.exports.name12 = name12;
+
  	var url = 'mongodb://127.0.0.1:27017/BBS';
 	MongoClient.connect(url, function(err, db){
       if (err) {

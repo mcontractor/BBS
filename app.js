@@ -69,44 +69,6 @@ app.use('/profile_picture2',profile_picture2);
 app.use('/ad_pic',ad_pic);
 app.use('/req_pic',req_pic);
 
-// Creating JSON Array for Ads.
-var json_ads = [];
-
-app.use(function(req,res,next) {
-	var MongoClient = require('mongodb').MongoClient;
-	var url = 'mongodb://127.0.0.1:27017/BBS';
-
-	MongoClient.connect(url, function(err, db) {
-
-	    var cursor = db.collection('ads').find();
-	    // Execute the each command, triggers for each document
-		cursor.each(function(err, item) {
-			// If the item is null then the cursor is exhausted/empty and closed
-        	if(item != null) {
-        	
-	   			var obj = {email: item.email,
-				   title: item.title,
-				   name: item.name,
-				   category: item.category,
-				   price: item.price,
-				   description: item.description,
-				   contact: item.contact
-				   };
-	       		json_ads.push(obj);
-       		}
-       		else
-       		{
-       			module.exports.json_ads = json_ads;
-				console.log(json_ads + " ocd");
-       		};
-      	});
-
-	}); 
-	db.close;
-});
-
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

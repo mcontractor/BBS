@@ -7,7 +7,13 @@ var multer  = require('multer')
 var upload = multer({ dest: 'uploads/' })
 
 router.get('/', function(req, res, next) {
-  res.render('contact_us', { title: 'Contact Us' });
+	var name12;
+    if ((require('./login.js').name12) != undefined ) {
+      name12 = require('./login.js').name12;
+    }
+    else
+      name12 = require('./signup.js').name12;
+  res.render('contact_us', { title: 'Contact Us',name122:name12 });
 
 });
 

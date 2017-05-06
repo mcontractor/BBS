@@ -8,9 +8,28 @@ html(lang='en')
     nav.navbar.navbar-inverse
       .container-fluid
         .navbar-header
-          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
           a(href='/main')
-            img(src='/images/BBS_logo2-4.png')
+            img(src='images/BBS_logo2-4.png')
+        div
+          br
+          a(href='/profile')
+            .text(style='float: right; margin-top: 50px; font-size: 20px; color: #FFFFFF')
+              b !{name122}
+            form.navbar-form.pull-right
+              .dropdown
+                a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | ? 
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/contact_us') About Us
+                  li
+                    a(href='/contact_us') Contact Us
+                  li
+                    a(href='/logout') Log Out
+            span
+              a(href = "/community")
+                img#globe(align='right', src='images/globe.png')
     .container
       section
         h1.entry-title

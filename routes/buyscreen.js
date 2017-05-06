@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var json_ads = require('./upload_ad.js').json_ads;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('buyscreen', { title: 'buyscreen' });
+	var name12;
+    if ((require('./login.js').name12) != undefined ) {
+      name12 = require('./login.js').name12;
+    }
+    else
+      name12 = require('./signup.js').name12;
+  res.render('buyscreen', { title: 'buyscreen', name122:name12, array_ads: json_ads });
 });
 
 router.get('/submit',function(req,res,next){
@@ -38,8 +45,5 @@ router.get('/submit',function(req,res,next){
 		res.render('/buyscreen');	
 	}	
 
-})
-
-
-
+});
 module.exports = router;
