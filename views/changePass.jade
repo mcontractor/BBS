@@ -36,7 +36,7 @@ html(lang='en')
     .container(style='margin-top: 100px')
       .row(style='margin-top:5px')
         .col-xs-12.col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-3
-          form(role='form')
+          form(role='form', method='post', action='/changePass/submit')
             fieldset
               center
                 h2 Change Password:
@@ -46,13 +46,11 @@ html(lang='en')
               .form-group
                 input#curr_pass.form-control.input-lg(type='password', name='password', placeholder='Current Password')
               .form-group
-                input#new_pass.form-control.input-lg(type='password', name='password', placeholder='New Password')
-              .form-group
-                input#conf_pass.form-control.input-lg(type='password', name='password', placeholder='Confirm Password')
+                input#new_pass.form-control.input-lg(type='password', name='npassword', placeholder='New Password')
               hr.colorgraph
               .modal-footer
-                button#password_modal_save.btn.btn-primary(href='#') Save Changes
-                button.btn(href='#', data-dismiss='modal', aria-hidden='true') Cancel
+                button#password_modal_save.btn.btn-primary(type='submit',name='submit') Save Changes
+                button.btn(href='profile', data-dismiss='modal', aria-hidden='true') Cancel
     script(src='index.js')
     script(src='http://code.jquery.com/jquery.js')
     script.

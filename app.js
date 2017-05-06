@@ -26,6 +26,7 @@ var buyscreen = require('./routes/buyscreen');
 var feedback = require('./routes/feedback');
 var changePass = require('./routes/changePass');
 var profile_picture = require('./routes/profile_picture');
+var profile_picture2 = require('./routes/profile_picture2');
 var ad_pic = require('./routes/ad_pic');
 var req_pic = require('./routes/req_pic');
 
@@ -64,6 +65,7 @@ app.use('/buyscreen',buyscreen);
 app.use('/feedback',feedback);
 app.use('/changePass',changePass);
 app.use('/profile_picture',profile_picture);
+app.use('/profile_picture2',profile_picture2);
 app.use('/ad_pic',ad_pic);
 app.use('/req_pic',req_pic);
 
@@ -80,24 +82,30 @@ app.use(function(req,res,next) {
 	    // Execute the each command, triggers for each document
 		cursor.each(function(err, item) {
 			// If the item is null then the cursor is exhausted/empty and closed
-        	if(item == null) {
- 		    	db.close();          		
-        	};
-        	var obj = {email: item.email,
-        			   title: item.title,
-        			   name: item.name,
-        			   category: item.category,
-        			   price: item.price,
-        			   description: item.description,
-        			   contact: item.contact
-        			   };
-       		json_ads.push(obj);
-       		console.log(json_ads);
+        	if(item != null) {
+        	
+	   			var obj = {email: item.email,
+				   title: item.title,
+				   name: item.name,
+				   category: item.category,
+				   price: item.price,
+				   description: item.description,
+				   contact: item.contact
+				   };
+	       		json_ads.push(obj);
+       		}
+       		else
+       		{
+       			module.exports.json_ads = json_ads;
+				console.log(json_ads + " ocd");
+       		};
       	});
-	});   
+
+	}); 
+	db.close;
 });
 
-module.exports.json_ads = json_ads;
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

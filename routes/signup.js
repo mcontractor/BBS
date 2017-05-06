@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 
 });
 
+
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
     service: 'gmail',
