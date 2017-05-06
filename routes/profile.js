@@ -8,7 +8,15 @@ router.get('/', function(req, res, next) {
     }
     else
       name12 = require('./signup.js').name12;
-  res.render('profile', { title: 'Profile', name122:name12 });
+  	var email;
+    if ((require('./login.js').email) != undefined ) {
+      email = require('./login.js').email;
+    }
+    else
+      email = require('./signup.js').email;
+  var link = '/uploads/' + email + '.jpg'
+  console.log(link);
+  res.render('profile', { title: 'Profile', name122:name12, link1:link });
 
 });
 

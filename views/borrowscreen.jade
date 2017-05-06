@@ -14,7 +14,7 @@ html(lang='en')
             img(src='/images/BBS_logo2-4.png')
         div
           br
-          a(href='/register')
+          a(href='/profile')
             .text(style='float: right; margin-top: 50px; font-size: 20px; color: #FFFFFF')
               b !{name122}
             form.navbar-form.pull-right
@@ -52,8 +52,11 @@ html(lang='en')
                 option(value='Books') Books 
                 option(value='Cars') Cars 
                 option(value='Other') Other
-    a(href = '/upload_requests', style='color:red')
-      .enjoy-css Post Request
+          .col-md-12(style='margin-top: 20px')
+            a.btn.btn-success.btn-lg.btn-huge(href='/upload_requests') Post Request
+      br
+      br
+      br
       div(style='margin-top: 30px;background-color: black;width: 100%;height: auto;margin-left: 80px')
         center
           .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
@@ -66,3 +69,5 @@ html(lang='en')
             img.img-responsive(src='http://fakeimg.pl/365x365/')
           .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
             img.img-responsive(src='http://fakeimg.pl/365x365/')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')

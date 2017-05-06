@@ -53,13 +53,12 @@ html(lang='en')
           .col-md-15.col-sm-9
             .input-group
               input#pname.form-control(type='text', name='pname', placeholder='Enter the name', value='')
-        br
-        label.control-label.col-sm-3
-          | Category 
-          span.text-danger
-        .col-xs-8
-          .form-inline
-            .form-group
+        .form-group
+          label.control-label.col-sm-3
+            | Category 
+            span.text-danger
+          .col-xs-8
+            .form-inline
               select.form-control(name='category')
                 option(value='Electronics') Electronics 
                 option(value='Trip Gear') Trip Gear 
@@ -68,16 +67,12 @@ html(lang='en')
                 option(value='Cars') Cars 
                 option(value='Other') Other 
         .form-group
-          br
-          br
-          br
-        .form-group
           label.control-label.col-sm-3
             | Price: Rs.
             span.text-danger
           .col-md-15.col-sm-9
             .input-group
-              textarea#code1(name='price', rows='1', cols='4')
+              input#code1.form-control(type='text', name='price', maxlength = '8',placeholder='Please enter the price')
         .form-group
           label.control-label.col-sm-3
             | Product Description:
