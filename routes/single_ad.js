@@ -8,6 +8,8 @@ router.get('/', function(req, res, next) {
     }
     else
       name12 = require('./signup.js').name12;
+
+  	
   res.render('single_ad', { title: 'Ad',name122:name12 });
 
 });

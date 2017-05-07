@@ -15,9 +15,9 @@ var storage = multer.diskStorage({
       email = require('./signup.js').email;
     
     var name = require('./upload_requests.js').req_name;
-    mkdirp(('requests/'+email+'/'+name+'/'), function(err) { 
+    mkdirp(('public/requests/'+email+'/'+name+'/'), function(err) { 
     });
-    cb(null, 'requests/'+email+'/'+name+'/');
+    cb(null, 'public/requests/'+email+'/'+name+'/');
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '.jpg');

@@ -9,11 +9,11 @@ html(lang='en')
       .container-fluid
         // Brand and toggle get grouped for better mobile display
         .navbar-header
-          a(href='/')
+          a(href='/main')
             img(src='/images/BBS_logo2-4.png')
         div
           br
-          a(href='/signup')
+          a(href='/profile')
             .text(style='float: right; margin-top: 50px; font-size: 20px; color: #FFFFFF')
               b !{name122}
             form.navbar-form.pull-right
@@ -29,11 +29,9 @@ html(lang='en')
                   li
                     a(href='/logout') Log Out
             span
-              img#globe(align='right', src='/images/globe.png')
+              a(href = '/community')
+                img#globe(align='right', src='/images/globe.png')
       // /.container-fluid
-    script(src='javascripts/jquery.min.js')
-    // Include all compiled plugins (below), or include individual files as needed
-    script(src='javascripts/bootstrap.min.js')
     div
       div
         h3(style='color: #0B614B;text-align: center;margin-bottom: 30px') BUY
@@ -65,3 +63,5 @@ html(lang='en')
           img.img-responsive(src='http://fakeimg.pl/365x365/')
         .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
           img.img-responsive(src='http://fakeimg.pl/365x365/')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')

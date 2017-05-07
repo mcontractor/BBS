@@ -8,16 +8,16 @@ html(lang='en')
     .container-fluid
       // Brand and toggle get grouped for better mobile display
       .navbar-header
-        a(href='/')
+        a(href='/main')
           img(src='images/BBS_logo2-4.png')
       div
         br
         a(href='/profile')
           .text(style='float: right; margin-top: 50px; font-size: 20px; color: #FFFFFF')
-            b !{name122}
+            b
           form.navbar-form.pull-right
             .dropdown
-              a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+              a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
                 | ? 
                 span.caret
               ul.dropdown-menu
@@ -28,7 +28,8 @@ html(lang='en')
                 li
                   a(href='/logout') Log Out
           span
-            img#globe(align='right', src='/images/globe.png')
+            a(href = '/community')
+              img#globe(align='right', src='/images/globe.png')
     // /.container-fluid
   div
     div
@@ -44,7 +45,7 @@ html(lang='en')
     center
       .col-md-3
         h3 TOP USER POINTS
-        ul(style='list-style: none;')
+        ul(style='list-style: none')
           li user1
           li user2
           li user3
@@ -53,13 +54,15 @@ html(lang='en')
           li user6
       .col-md-3
         h3 TOP USER RATINGS
-        ul(style='list-style: none;')
+        ul(style='list-style: none')
           li user1
           li user2
           li user3
           li user4
           li user5
           li user6
+      .col-md-12(style='margin-top: 20px')
+        a.btn.btn-success.btn-lg.btn-huge(href='/chatroom_server') Chat Room
       //
         <div class="col-xs-7 col-md-offset-0 col-md-6 col-lg-4 col-lg-offset-0">
         <div class="panel panel-primary">
@@ -95,20 +98,6 @@ html(lang='en')
         </div>
         </div>
         </div>
-      .container
-        .row
-          .col-md-4
-            .well
-              h3  Online Users 
-              ul#users.list-group
-            .col-md-8
-              #chat.chat
-              form#messageform
-                .form-group
-                  label  Enter Message
-                  textarea#message.form-control
-                  br
-                  input.btn.btn-primary(type='submit',name='submit' value='Send Message')
       script.
         $(function() {
         var socket = io.connect();

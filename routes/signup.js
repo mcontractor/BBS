@@ -60,11 +60,11 @@ router.post('/submit', function(req,res,next){
 					var verf = rand_num
 					module.exports.verf = verf;
 
-					mkdirp(('ads/'+email), function(err) { 
+					mkdirp(('public/ads/'+email), function(err) { 
 					    console.log('directory made')
 					});
 
-					mkdirp(('requests/'+email), function(err) { 
+					mkdirp(('public/requests/'+email), function(err) { 
 					    console.log('directory made')
 					});
 					
