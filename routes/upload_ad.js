@@ -9,7 +9,34 @@ router.get('/', function(req, res, next) {
     else
       name12 = require('./signup.js').name12;
   res.render('upload_ad', { title: 'Upload An Ad',name122:name12 });
+});
 
+// Creating JSON Array for Ads.
+var json_ads = [];
+router.get(function(req,res,next) {
+	var MongoClient = require('mongodb').MongoClient;
+	var url = 'mongodb://127.0.0.1:27017/BBS';
+
+	MongoClient.connect(url, function(err, db) {
+
+	    var cursor = db.collection('ads').find();
+	    // Execute the each command, triggers for each document
+		cursor.each( function(err, item) {
+			// If the item is null then the cursor is exhausted/empty and closed
+        	if(item != null) {
+	        	var obj = {
+	        		email: item.email,
+    			   	title: item.title,
+    			   	name: item.name,
+    			   	category: item.category,
+    			   	price: item.price,
+    			  	description: item.description,
+    			  	contact: item.contact
+	        	};
+	        	json_ads.push(obj);
+	        };	        
+      	});
+	});   
 });
 
 var json_ads = [];
@@ -66,5 +93,5 @@ router.post('/submit',function(req,res,next){
 	    module.exports.json_ads = json_ads;
 	}); 	
 });
-
 module.exports = router;
+
