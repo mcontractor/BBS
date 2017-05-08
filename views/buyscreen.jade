@@ -51,141 +51,146 @@ html(lang='en')
     br
     br
     br
-    hr
-    .container
-      .row
-        .list-group
-          .media.col-md-3
-            figure.pull-left
-              img.media-object.img-rounded.img-responsive(src='ads/'+array_1.email+'/'+array_1.name+'/1.jpg', width='50%',height='50%')
-          .col-md-6
-            h3.list-group-item-heading
-              | Title:
-              | !{array_1.title}
-            br
-            h4.list-group-item-heading
-              | Name:
-              | !{array_1.name} 
-            br
-            h4.list-group-item-text
-              | Description:
-              | !{array_1.description}
-          .col-md-3.text-center
-            h4
-              | Price : 
-              | !{array_1.price} 
-            br
-            h4
-              | Contact Information :
-              |  !{array_1.contact}
-    hr
-    .container
-      .row
-        .list-group
-          .media.col-md-3
-            figure.pull-left
-              img.media-object.img-rounded.img-responsive(src='ads/'+array_2.email+'/'+array_2.name+'/1.jpg', width='50%',height='50%')
-          .col-md-6
-            h3.list-group-item-heading
-              | Title:
-              | !{array_2.title}
-            br
-            h4.list-group-item-heading
-              | Name:
-              | !{array_2.name} 
-            br
-            h4.list-group-item-text
-              | Description:
-              | !{array_2.description}
-          .col-md-3.text-center
-            h4
-              | Price : 
-              | !{array_2.price}
-            br 
-            h4
-              | Contact Information :
-              |  !{array_2.contact}
-    hr
-    .container
-      .row
-        .list-group
-          .media.col-md-3
-            figure.pull-left
-              img.media-object.img-rounded.img-responsive(src='ads/'+array_3.email+'/'+array_3.name+'/1.jpg', width='50%',height='50%')
-          .col-md-6
-            h3.list-group-item-heading
-              | Title:
-              | !{array_3.title}
-            br
-            h4.list-group-item-heading
-              | Name:
-              | !{array_3.name} 
-            br
-            h4.list-group-item-text
-              | Description:
-              | !{array_3.description}
-          .col-md-3.text-center
-            h4
-              | Price: 
-              | !{array_3.price}
-            br 
-            h4
-              | Contact Information:
-              |  !{array_3.contact}
-    hr
-    .container
-      .row
-        .list-group
-          .media.col-md-3
-            figure.pull-left
-              img.media-object.img-rounded.img-responsive(src='ads/'+array_4.email+'/'+array_4.name+'/1.jpg', width='50%',height='50%')
-          .col-md-6
-            h3.list-group-item-heading
-              | Title:
-              | !{array_4.title}
-            br
-            h4.list-group-item-heading
-              | Name:
-              | !{array_4.name} 
-            br
-            h4.list-group-item-text
-              | Description: 
-              | !{array_4.description}
-          .col-md-3.text-center
-            h4
-              | Price: 
-              | !{array_4.price}
-            br 
-            h4
-              | Contact Information:
-              |  !{array_4.contact}
-    hr
-    .container
-      .row
-        .list-group
-          .media.col-md-3
-            figure.pull-left
-              img.media-object.img-rounded.img-responsive(src='ads/'+array_5.email+'/'+array_5.name+'/1.jpg', width='50%',height='50%')
-          .col-md-6
-            h3.list-group-item-heading
-              | Title:
-              | !{array_5.title}
-            br
-            h4.list-group-item-heading
-              | Name:
-              | !{array_5.name} 
-            br
-            h4.list-group-item-text
-              | Description: 
-              | !{array_5.description}
-          .col-md-3.text-center
-            h4
-              | Price: 
-              | !{array_5.price}
-            br 
-            h4
-              | Contact Information:
-              |  !{array_5.contact}
+    if (array_1 != undefined)
+      hr
+      .container
+        .row
+          .list-group
+            .media.col-md-3
+              figure.pull-left
+                img.media-object.img-rounded.img-responsive(src='ads/'+array_1.email+'/'+array_1.name+'/1.jpg', width='50%',height='50%')
+            .col-md-6
+              h3.list-group-item-heading
+                | Title:
+                | !{array_1.title}
+              br
+              h4.list-group-item-heading
+                | Name:
+                | !{array_1.name} 
+              br
+              h4.list-group-item-text
+                | Description:
+                | !{array_1.description}
+            .col-md-3.text-center
+              h4
+                | Price : 
+                | !{array_1.price} 
+              br
+              h4
+                | Contact Information :
+                |  !{array_1.contact}
+    if (array_2 != undefined)
+      hr
+      .container
+        .row
+          .list-group
+            .media.col-md-3
+              figure.pull-left
+                img.media-object.img-rounded.img-responsive(src='ads/'+array_2.email+'/'+array_2.name+'/1.jpg', width='50%',height='50%')
+            .col-md-6
+              h3.list-group-item-heading
+                | Title:
+                | !{array_2.title}
+              br
+              h4.list-group-item-heading
+                | Name:
+                | !{array_2.name} 
+              br
+              h4.list-group-item-text
+                | Description:
+                | !{array_2.description}
+            .col-md-3.text-center
+              h4
+                | Price : 
+                | !{array_2.price}
+              br 
+              h4
+                | Contact Information :
+                |  !{array_2.contact}
+    if (array_3 != undefined)
+      hr
+      .container
+        .row
+          .list-group
+            .media.col-md-3
+              figure.pull-left
+                img.media-object.img-rounded.img-responsive(src='ads/'+array_3.email+'/'+array_3.name+'/1.jpg', width='50%',height='50%')
+            .col-md-6
+              h3.list-group-item-heading
+                | Title:
+                | !{array_3.title}
+              br
+              h4.list-group-item-heading
+                | Name:
+                | !{array_3.name} 
+              br
+              h4.list-group-item-text
+                | Description:
+                | !{array_3.description}
+            .col-md-3.text-center
+              h4
+                | Price: 
+                | !{array_3.price}
+              br 
+              h4
+                | Contact Information:
+                |  !{array_3.contact}
+    if (array_4 != undefined)
+      hr
+      .container
+        .row
+          .list-group
+            .media.col-md-3
+              figure.pull-left
+                img.media-object.img-rounded.img-responsive(src='ads/'+array_4.email+'/'+array_4.name+'/1.jpg', width='50%',height='50%')
+            .col-md-6
+              h3.list-group-item-heading
+                | Title:
+                | !{array_4.title}
+              br
+              h4.list-group-item-heading
+                | Name:
+                | !{array_4.name} 
+              br
+              h4.list-group-item-text
+                | Description: 
+                | !{array_4.description}
+            .col-md-3.text-center
+              h4
+                | Price: 
+                | !{array_4.price}
+              br 
+              h4
+                | Contact Information:
+                |  !{array_4.contact}
+    if (array_5 != undefined)
+      hr
+      .container
+        .row
+          .list-group
+            .media.col-md-3
+              figure.pull-left
+                img.media-object.img-rounded.img-responsive(src='ads/'+array_5.email+'/'+array_5.name+'/1.jpg', width='50%',height='50%')
+            .col-md-6
+              h3.list-group-item-heading
+                | Title:
+                | !{array_5.title}
+              br
+              h4.list-group-item-heading
+                | Name:
+                | !{array_5.name} 
+              br
+              h4.list-group-item-text
+                | Description: 
+                | !{array_5.description}
+            .col-md-3.text-center
+              h4
+                | Price: 
+                | !{array_5.price}
+              br 
+              h4
+                | Contact Information:
+                |  !{array_5.contact}
     hr
 
     .text-center.center-block
