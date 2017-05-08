@@ -34,34 +34,172 @@ html(lang='en')
       // /.container-fluid
     div
       div
-        h3(style='color: #0B614B;text-align: center;margin-bottom: 30px') BUY
-        center
-          #custom-search-input
-            form.form-inline(action='/buyscreen', method='GET')
-              .form-group.col-md-5
-                input.form-control(type='text', name='search', placeholder='Search')
-                input.btn.btn-danger(type='submit', value='Search')
-                select.form-control(name='category', style='width:90px;margin-left: 20px')
-                  option(value='0') All
-                  option(value='1') Electronics 
-                  option(value='2') Trip Gear 
-                  option(value='3') Stationary 
-                  option(value='4') Books 
-                  option(value='5') Cars 
-                  option(value='6') Other 
+        h1(style='color: #0B614B;text-align: center;margin-bottom: 30px') BUY
+        #custom-search-input
+          form.form-inline(action='/buyscreen', method='GET', align=center )
+            .form-group.col-md-5
+              input.form-control(type='text', name='search', placeholder='Search')
+              input.btn.btn-danger(type='submit', value='Search')
+              select.form-control(name='category', style='width:90px;margin-left: 20px')
+                option(value='0') All
+                option(value='1') Electronics 
+                option(value='2') Trip Gear 
+                option(value='3') Stationary 
+                option(value='4') Books 
+                option(value='5') Cars 
+                option(value='6') Other 
     br
-    // CODE HAS TO BR REMOVED
-    div(style='margin-top: 30px;background-color: red;width: 100%;height: auto;margin-left: 80px')
-      center
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.sprinkle
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
-        .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-          img.img-responsive(src='http://fakeimg.pl/365x365/')
+    br
+    br
+    hr
+    .container
+      .row
+        .list-group
+          .media.col-md-3
+            figure.pull-left
+              img.media-object.img-rounded.img-responsive(src='ads/'+array_1.email+'/'+array_1.name+'/1.jpg', width='50%',height='50%')
+          .col-md-6
+            h3.list-group-item-heading
+              | Title:
+              | !{array_1.title}
+            br
+            h4.list-group-item-heading
+              | Name:
+              | !{array_1.name} 
+            br
+            p.list-group-item-text
+              | Description
+              | !{array_1.description}
+          .col-md-3.text-center
+            h3
+              | Price : 
+              | !{array_1.price} 
+            h3
+              | Contact Information :
+              |  !{array_1.contact}
+    hr
+    .container
+      .row
+        .list-group
+          .media.col-md-3
+            figure.pull-left
+              img.media-object.img-rounded.img-responsive(src='ads/'+array_2.email+'/'+array_2.name+'/1.jpg', width='50%',height='50%')
+          .col-md-6
+            h3.list-group-item-heading
+              | Title:
+              | !{array_2.title}
+            br
+            h4.list-group-item-heading
+              | Name:
+              | !{array_2.name} 
+            br
+            p.list-group-item-text
+              | Description
+              | !{array_2.description}
+          .col-md-3.text-center
+            h3
+              | Price : 
+              | !{array_2.price} 
+            h3
+              | Contact Information :
+              |  !{array_2.contact}
+    hr
+    .container
+      .row
+        .list-group
+          .media.col-md-3
+            figure.pull-left
+              img.media-object.img-rounded.img-responsive(src='ads/'+array_3.email+'/'+array_3.name+'/1.jpg', width='50%',height='50%')
+          .col-md-6
+            h3.list-group-item-heading
+              | Title:
+              | !{array_3.title}
+            br
+            h4.list-group-item-heading
+              | Name:
+              | !{array_3.name} 
+            br
+            p.list-group-item-text
+              | Description
+              | !{array_3.description}
+          .col-md-3.text-center
+            h3
+              | Price : 
+              | !{array_3.price} 
+            h3
+              | Contact Information :
+              |  !{array_3.contact}
+    hr
+    .container
+      .row
+        .list-group
+          .media.col-md-3
+            figure.pull-left
+              img.media-object.img-rounded.img-responsive(src='ads/'+array_4.email+'/'+array_4.name+'/1.jpg', width='50%',height='50%')
+          .col-md-6
+            h3.list-group-item-heading
+              | Title:
+              | !{array_4.title}
+            br
+            h4.list-group-item-heading
+              | Name:
+              | !{array_4.name} 
+            br
+            p.list-group-item-text
+              | Description
+              | !{array_4.description}
+          .col-md-3.text-center
+            h3
+              | Price : 
+              | !{array_4.price} 
+            h3
+              | Contact Information :
+              |  !{array_4.contact}
+    hr
+    .container
+      .row
+        .list-group
+          .media.col-md-3
+            figure.pull-left
+              img.media-object.img-rounded.img-responsive(src='ads/'+array_5.email+'/'+array_5.name+'/1.jpg', width='50%',height='50%')
+          .col-md-6
+            h3.list-group-item-heading
+              | Title:
+              | !{array_5.title}
+            br
+            h4.list-group-item-heading
+              | Name:
+              | !{array_5.name} 
+            br
+            p.list-group-item-text
+              | Description
+              | !{array_5.description}
+          .col-md-3.text-center
+            h3
+              | Price : 
+              | !{array_5.price} 
+            h3
+              | Contact Information :
+              |  !{array_5.contact}
+    hr
+
+    .text-center.center-block
+      br
+      a(href='/buyscreen', style='font-size:20px')
+        | 1   
+      a(href='/buyscreen?1=1', style='font-size:20px')
+        | 2  
+      a(href='/buyscreen?1=2', style='font-size:20px')
+        | 3  
+      a(href='/buyscreen?1=3', style='font-size:20px')
+        | 4  
+      a(href='/buyscreen?1=4', style='font-size:20px')
+        | 5  
+      a(href='/buyscreen?1=5', style='font-size:20px')
+        | 6  
+    hr
+
+
+
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     script(src='javascripts/bootstrap.min.js')
