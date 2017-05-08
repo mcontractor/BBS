@@ -7,7 +7,10 @@ var router = express.Router();
 var mkdirp = require('mkdirp');
 
 router.get('/', function(req, res, next) {
-  res.render('signup', { title: 'Sign Up' });
+	var val = req.query[1]
+	if (val == undefined)
+		val = '';
+  res.render('signup', { title: 'Sign Up',message:val });
 
 });
 
@@ -90,7 +93,7 @@ router.post('/submit', function(req,res,next){
 			    });	    		
 	    	}
 	    	else{
-	    		res.redirect('/');
+	    		res.redirect('/signup?1=You already have an account. Please log in instead');
 	    	}
      	});
 	});			

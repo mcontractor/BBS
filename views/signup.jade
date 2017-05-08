@@ -10,7 +10,6 @@ html(lang='en')
         .navbar-header
           a(href="/")
             img(src='images/BBS_logo2-4.png')
-
     .container
       .row
         .col-md-8
@@ -18,6 +17,12 @@ html(lang='en')
             h1.entry-title
               span Register
             hr
+            if (message.length > 0)
+              center
+                .alert.alert-error
+                  a.close(data-dismiss='alert',style='fontsize:30px' href='#') ×
+                  | !{message}
+                  hr
             form#register.form-horizontal(role = 'form',method='post', name='register', action='/signup/submit')
               .form-group
                 label.control-label.col-sm-3
@@ -52,7 +57,7 @@ html(lang='en')
                 .col-xs-8
                   .form-inline
                     .form-group
-                      select.form-control(name='dd')
+                      select.form-control(name='dd',style='width:100px;')
                         option(value='')  Date
                         option(value='1') 1 
                         option(value='2') 2 
@@ -86,7 +91,7 @@ html(lang='en')
                         option(value='30') 30 
                         option(value='31') 31 
                     .form-group
-                      select.form-control(name='mm')
+                      select.form-control(name='mm',style='width:100px;')
                         option(value='')  Month
                         option(value='1') Jan
                         option(value='2') Feb
@@ -101,7 +106,7 @@ html(lang='en')
                         option(value='11') Nov
                         option(value='12') Dec
                     .form-group
-                      select.form-control(name='yyyy')
+                      select.form-control(name='yyyy',style='width:100px;')
                         option(value='0')  Year
                         option(value='1955') 1955 
                         option(value='1956') 1956 
@@ -161,9 +166,9 @@ html(lang='en')
                   span.text-danger *
                 .col-md-8.col-sm-9
                   input(name='gender', type='radio', value='Male', checked='')
-                  |  Male
+                  |  Male  
                   input(name='gender', type='radio', value='Female')
-                  |             Female
+                  |  Female
               .form-group
                 label.control-label.col-sm-3
                   | Contact No. 
