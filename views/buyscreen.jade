@@ -34,20 +34,23 @@ html(lang='en')
       // /.container-fluid
     div
       div
-        h1(style='color: #0B614B;text-align: center;margin-bottom: 30px') BUY
-        #custom-search-input
-          form.form-inline(action='/buyscreen', method='GET', align=center )
-            .form-group.col-md-5
-              input.form-control(type='text', name='search', placeholder='Search')
-              input.btn.btn-danger(type='submit', value='Search')
+        h3(style='color: #0B614B;text-align: center;margin-bottom: 30px') BUY
+        center
+          #custom-search-input
+            .input-group.col-md-5
+              input.search-query.form-control(type='text', placeholder='Search')
+              span.input-group-btn
+                button.btn.btn-danger(type='button')
+                  img(src='/images/search.png', style='width:10px;height: 10px')
               select.form-control(name='category', style='width:90px;margin-left: 20px')
-                option(value='0') All
-                option(value='1') Electronics 
-                option(value='2') Trip Gear 
-                option(value='3') Stationary 
-                option(value='4') Books 
-                option(value='5') Cars 
-                option(value='6') Other 
+                option(value='ALL') ALL
+                option(value='Electronics') Electronics 
+                option(value='Trip Gear') Trip Gear 
+                option(value='Stationary') Stationary 
+                option(value='Books') Books 
+                option(value='Cars') Cars 
+                option(value='Other') Other
+          .col-md-12(style='margin-top: 20px') 
     br
     br
     br
