@@ -5,6 +5,7 @@ html(lang='en')
     title Profile
     link(href='stylesheets/bootstrap.css', rel='stylesheet')
     link(href='stylesheets/borrowscreen.css', rel='stylesheet')
+    link(rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css")
     style.
       .round {
       border-radius: 50%;
@@ -55,32 +56,73 @@ html(lang='en')
         a.btn.btn-primary.btn-lg.btn-block.btn-huge(href='/profile_picture2') Change Picture
 
     .col-md-8(style='')
-      div(style='margin-top: 30px;margin-bottom: 20px;width: 100%;height: auto;')
-        h2(style='margin-top: 10px;margin-bottom: 20px') Your ads
-        center
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.sprinkle
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-      div(style='margin-top: 30px;margin-bottom: 20px;width: 100%;height: auto;margin-left: 80px;float: right')
-        h2(style='margin-top: 10px;margin-bottom: 20px') Your requests
-        center
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.sprinkle
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
-          .gallery_product.col-lg-2.col-md-2.col-sm-2.col-xs-3.filter.hdpe
-            img.img-responsive(src='http://fakeimg.pl/365x365/')
+      .container
+        .row
+          .col-md-8
+            // Nav tabs
+            ul.nav.nav-tabs(role='tablist')
+              li.active(role='presentation')
+                a(href='/profile')
+                  i.fa.fa-user
+                  span Ads
+              li.active(role='presentation')
+                a(href='/profile?1=1')
+                  i.fa.fa-user
+                  span Requests
+      each val in array
+        if (val != undefined)
+          if (val1 == 0)
+            hr
+            .container
+              .row
+                .list-group
+                  .media.col-md-3
+                    figure.pull-left
+                      img.media-object.img-rounded.img-responsive(src='ads/'+val.email+'/'+val.name+'/1.jpg', width='50%',height='50%')
+                  .col-md-3
+                    h3.list-group-item-heading
+                      | Title:
+                      | !{val.title}
+                    br
+                    h4.list-group-item-heading
+                      | Name:
+                      | !{val.name} 
+                    br
+                    h4.list-group-item-text
+                      | Description: 
+                      | !{val.description}
+                  .col-md-3.text-center
+                    h4
+                      | Price: 
+                      | !{val.price}
+                    br 
+                    h4
+                      | Contact Information:
+                      |  !{val.contact}     
+          if (val1 == 1)
+            hr
+            .container
+              .row
+                .list-group
+                  .media.col-md-3
+                    figure.pull-left
+                      img.media-object.img-rounded.img-responsive(src='requests/'+val.email+'/'+val.name+'/1.jpg', width='50%',height='50%')
+                  .col-md-6
+                    h3.list-group-item-heading
+                      | Title:
+                      | !{val.title}
+                    br
+                    h4.list-group-item-heading
+                      | Name:
+                      | !{val.name} 
+                    br
+                    h4.list-group-item-text
+                      | Description: 
+                      | !{val.description}
+                    br 
+                    h4
+                      | Contact Information:
+                      |  !{val.contact}
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     // Include all compiled plugins (below), or include individual files as needed
     script(src='javascripts/bootstrap.min.js')
