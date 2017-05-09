@@ -30,6 +30,7 @@ var profile_picture = require('./routes/profile_picture');
 var profile_picture2 = require('./routes/profile_picture2');
 var ad_pic = require('./routes/ad_pic');
 var req_pic = require('./routes/req_pic');
+var delete1 = require('./routes/delete1');
 
 
 var app = express();
@@ -70,6 +71,7 @@ app.use('/profile_picture',profile_picture);
 app.use('/profile_picture2',profile_picture2);
 app.use('/ad_pic',ad_pic);
 app.use('/req_pic',req_pic);
+app.use('/delete1',delete1);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

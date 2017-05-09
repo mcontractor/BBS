@@ -55,10 +55,10 @@ html(lang='en')
       .col-md-12(style='margin-top: 20px')
         a.btn.btn-primary.btn-lg.btn-block.btn-huge(href='/profile_picture2') Change Picture
 
-    .col-md-8(style='')
+    .col-md-6(style='')
       .container
         .row
-          .col-md-8
+          .col-md-9
             // Nav tabs
             ul.nav.nav-tabs(role='tablist')
               li.active(role='presentation')
@@ -98,7 +98,10 @@ html(lang='en')
                     br 
                     h4
                       | Contact Information:
-                      |  !{val.contact}     
+                      |  !{val.contact}
+                    br
+                    .col-md-8-center    
+                      a.btn.btn-danger.btn-lg.btn-block(href='/delete1?a='+val.email+'~'+val.title+'~'+val.name) Delete
           if (val1 == 1)
             hr
             .container
@@ -107,7 +110,7 @@ html(lang='en')
                   .media.col-md-3
                     figure.pull-left
                       img.media-object.img-rounded.img-responsive(src='requests/'+val.email+'/'+val.name+'/1.jpg', width='50%',height='50%')
-                  .col-md-6
+                  .col-md-4
                     h3.list-group-item-heading
                       | Title:
                       | !{val.title}
@@ -123,6 +126,9 @@ html(lang='en')
                     h4
                       | Contact Information:
                       |  !{val.contact}
+                    br
+                  .col-md-2.center
+                    a.btn.btn-danger.btn-lg.btn-block(href='/delete1?b='+val.email+'~'+val.title+'~'+val.name) Delete
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     // Include all compiled plugins (below), or include individual files as needed
     script(src='javascripts/bootstrap.min.js')
