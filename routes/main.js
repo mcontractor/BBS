@@ -2,8 +2,10 @@ var express = require('express')
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-	console.log(req.query.name);
-  res.render('main', { title: 'Main' });
+	var sess = require('./login').sess;
+	if(sess.email){
+		res.render('main', { title: 'Main' });
+	}
 
 });
 

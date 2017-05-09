@@ -1,0 +1,90 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Buy
+    link(href='stylesheets/bootstrap.css', rel='stylesheet')
+  body(style='background: white')
+    nav.navbar.navbar-inverse
+      .container-fluid
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          a(href='/main')
+            img(src='/images/BBS_logo2-4.png')
+        div
+          br
+          a(href='/profile')
+            .text(style='float: right; margin-top: 50px; font-size: 20px; color: #FFFFFF')
+              b !{name122}
+            form.navbar-form.pull-right
+              .dropdown
+                a.dropdown-toggle(href='#', style='color:#FFFFFF; font-size:50px; float: right;', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | ? 
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/contact_us') About Us
+                  li
+                    a(href='/contact_us') Contact Us
+                  li
+                    a(href='/logout') Log Out
+            span
+              a(href = '/community')
+                img#globe(align='right', src='/images/globe.png')
+      // /.container-fluid
+    div
+      div
+        h3(style='color: #0B614B;text-align: center;margin-bottom: 30px') BUY
+        center
+          form#custom-search-input(role='form', method='post', action='/buyscreen/submit')
+            .input-group.col-md-5
+              input.search-query.form-control(type='text', placeholder='Search', name='query')
+              span.input-group-btn
+                button.btn.btn-danger(type='submit')
+                  img(src='/images/search.png', style='width:10px;height: 10px')
+              select.form-control(name='category', style='width:90px;margin-left: 20px')
+                option(value='ALL') ALL
+                option(value='Electronics') Electronics 
+                option(value='Trip Gear') Trip Gear 
+                option(value='Stationary') Stationary 
+                option(value='Books') Books 
+                option(value='Cars') Cars 
+                option(value='Other') Other 
+    br
+    br
+    br
+    each val in array
+      if (val != undefined)
+        hr
+        .container
+          .row
+            .list-group
+              .media.col-md-3
+                figure.pull-left
+                  img.media-object.img-rounded.img-responsive(src='ads/'+val.email+'/'+val.name+'/1.jpg', width='50%',height='50%')
+              .col-md-3
+                h3.list-group-item-heading
+                  | Title:
+                  | !{val.title}
+                br
+                h4.list-group-item-heading
+                  | Name:
+                  | !{val.name} 
+                br
+                h4.list-group-item-text
+                  | Description: 
+                  | !{val.description}
+              .col-md-3.text-center
+                h4
+                  | Price: 
+                  | !{val.price}
+                br 
+                h4
+                  | Contact Information:
+                  |  !{val.contact}
+
+
+
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')

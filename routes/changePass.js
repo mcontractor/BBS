@@ -3,13 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var name12;
-    if ((require('./login.js').name12) != undefined ) {
-      name12 = require('./login.js').name12;
-    }
-    else
-      name12 = require('./signup.js').name12;
-  res.render('changePass', { title: 'changePass', name122:name12 });
+	var sess = require('./login').sess
+    if(sess.email){
+  		res.render('changePass', { title: 'changePass', name122:sess.name });
+  	}
 });
 
 router.post('/submit',function(req,res,next){

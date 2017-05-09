@@ -15,7 +15,7 @@ router.post('/submit',function(req,res,next){
 	var check = 0;
 
 	if(req.body.verfcode == verf){
-		res.redirect('/main')
+		res.redirect('/?a=Your account has been created. Please log in to continue');
 	}
 	else{
 		res.redirect('/security_code')

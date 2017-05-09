@@ -36,11 +36,11 @@ html(lang='en')
       div
         h3(style='color: #0B614B;text-align: center;margin-bottom: 30px') BUY
         center
-          #custom-search-input
+          form#custom-search-input(role='form', method='post', action='/buyscreen/submit')
             .input-group.col-md-5
-              input.search-query.form-control(type='text', placeholder='Search')
+              input.search-query.form-control(type='text', placeholder='Search', name='query')
               span.input-group-btn
-                button.btn.btn-danger(type='button')
+                button.btn.btn-danger(type='submit')
                   img(src='/images/search.png', style='width:10px;height: 10px')
               select.form-control(name='category', style='width:90px;margin-left: 20px')
                 option(value='ALL') ALL
@@ -49,8 +49,7 @@ html(lang='en')
                 option(value='Stationary') Stationary 
                 option(value='Books') Books 
                 option(value='Cars') Cars 
-                option(value='Other') Other
-          .col-md-12(style='margin-top: 20px') 
+                option(value='Other') Other 
     br
     br
     br

@@ -5,41 +5,34 @@ var fs = require('fs');
 var multer = require('multer');
 var mkdirp = require('mkdirp');
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    var email;
-    if ((require('./login.js').email) != undefined ) {
-      email = require('./login.js').email;
-    }
-    else
-      email = require('./signup.js').email;
+  
 
-    var name = require('./upload_ad.js').ad_name;
-    mkdirp(('public/ads/'+email+'/'+name+'/'), function(err) { 
-      console.log('folder made');
-      cb(null, 'public/ads/'+email+'/'+name+'/');
-    });
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '.jpg');
-  }
-})
 
-var upload = multer({ storage: storage })
 
 
 router.get('/', function(req, res, next) {
-  var name12;
-    if ((require('./login.js').name12) != undefined ) {
-      name12 = require('./login.js').name12;
+  var sess = require('./login').sess
+  var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      
+
+      var name = require('./upload_ad.js').ad_name;
+      mkdirp(('public/ads/'+sess.email+'/'+name+'/'), function(err) { 
+        console.log('folder made');
+        cb(null, 'public/ads/'+sess.email+'/'+name+'/');
+      });
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '.jpg');
     }
-    else
-      name12 = require('./signup.js').name12;
-  res.render('ad_pic', { title: 'Ad Pictures', name122:name12 });
+  })
+  var upload = multer({ storage: storage })
+  res.render('ad_pic', { title: 'Ad Pictures', name122:sess.name });
+  router.post('/upload',upload.any(), function(req, res) {
+    res.redirect('/confirmation');
+  });
 });
 
-router.post('/upload',upload.any(), function(req, res) {
-	res.redirect('/confirmation');
-});
+
 
 module.exports = router;

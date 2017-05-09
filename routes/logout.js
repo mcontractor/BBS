@@ -2,7 +2,14 @@ var express = require('express')
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('logout', { title: 'Logout' });
+	req.session.destroy(function(err) {
+	  if(err) {
+	    console.log(err);
+	  } else {
+	    res.render('logout', { title: 'Logout' });
+	  }
+	});
+  
 
 });
 

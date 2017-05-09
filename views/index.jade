@@ -7,7 +7,12 @@ block content
     link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='home.css')
     title  WELCOME TO BBS   
-  body(style='background:#0f0f0a;font-family: Helvetica')
+  body(style='background:#0f0f0a;font-family: Helvetica;color:white')
+    if (message.length > 0)
+      center
+        .alert.alert-error
+          a.close(data-dismiss='alert', href='#')
+          | !{message}                  
     center
       img#logoimage(src='images/BBS_logo2-5.png')
     center

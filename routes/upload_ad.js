@@ -2,13 +2,11 @@ var express = require('express')
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-	var name12;
-    if ((require('./login.js').name12) != undefined ) {
-      name12 = require('./login.js').name12;
+	var sess = require('./login').sess
+    if(sess.email){
+    	res.render('upload_ad', { title: 'Upload An Ad',name122:sess.name });
     }
-    else
-      name12 = require('./signup.js').name12;
-  res.render('upload_ad', { title: 'Upload An Ad',name122:name12 });
+  
 });
 
 // Creating JSON Array for Ads.
