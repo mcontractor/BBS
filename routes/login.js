@@ -38,7 +38,7 @@ router.post('/submit',function(req,res,next){
 	    			var name12 = doc.name;
 					module.exports.name12 = name12;
 					sess = req.session;
-					sess.email=req.body.email;
+					sess.email=email;
 					sess.name = doc.name;
 					module.exports.sess = sess
 					res.redirect('/main');
