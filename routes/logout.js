@@ -2,15 +2,15 @@ var express = require('express')
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-	req.session.destroy(function(err) {
-	  if(err) {
-	    console.log(err);
-	  } else {
-	    res.render('logout', { title: 'Logout' });
-	  }
-	});
-  
+	var sess = require('./login.js').sess;
+	sess.secret = 'secret',
+	sess.name = false,
+	sess.email = false,
+	sess.proxy = true,
+	sess.resave = true,
+	sess.saveUninitialized = true
 
+	res.render('logout',{title:'Logout'});
 });
 
 module.exports = router;
