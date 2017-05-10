@@ -64,14 +64,14 @@ html(lang='en')
           h3(style='text-align: left') Top User points:
           each x in top_points
             h4.list-group-item-heading
-              | Email:
-              | !{x.email}
+              | Name:
+              | !{x.name}
               | Points:
               | !{x.points}
           br
           .col-md-12(style='margin-top: 20px')
             figure.pull-left
-              a.btn.btn-primary.btn-lg.btn-block.btn-huge(href='http://localhost:5000') Chat Room
+              a.btn.btn-primary.btn-lg.btn-block.btn-huge(href='http://10.130.164.55:5000') Chat Room
         .col-md-9
           each val in array
             if (val != undefined)
@@ -96,7 +96,10 @@ html(lang='en')
                     h4
                       | Gender:
                       |  !{val.gender}
-                    br 
+                    br
+                    h4
+                      | Points: 
+                      | !{val.points} 
             
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     // Include all compiled plugins (below), or include individual files as needed

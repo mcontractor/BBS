@@ -38,6 +38,12 @@ html(lang='en')
     br
     section
       hr
+      if (message.length > 0)
+        center
+          .alert.alert-error
+            a.close(data-dismiss='alert',style='fontsize:30px' href='#') ×
+            | !{message}
+            hr
       form#sellAd.form-horizontal(role = 'form',method='post', name='sell', action='/upload_requests/submit')
         br
         .form-group

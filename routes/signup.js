@@ -33,71 +33,83 @@ router.post('/submit', function(req,res,next){
 	var name12 = req.body.mem_name;
 	module.exports.name12 = name12;
 
- 	var url = 'mongodb://127.0.0.1:27017/BBS';
-	MongoClient.connect(url, function(err, db){
-      if (err) {
-        console.log('Unable to connect to the Server:', err);
-      } else {
-        console.log('Connected to Server');
-	    };
-		var users = db.collection("users");
-		var user_pictures = db.collection("user_pictures");
+	if ((req.body.email == null) || (req.body.mem_name == null) || (req.body.password == null) || 
+		(req.body.dd == null) || (req.body.mm == null) || (req.body.yyyy == null) || (req.body.contactnum == null)) {
 
-	    var cursor = db.collection('users').find({'email':req.body.emailid});
+		res.redirect('/signup?1=Please fill all the fields');
+	}
+	else if (email.indexOf('lums') !== -1) {
 
-	    cursor.count(function(err,count){
-	    	console.log(count)
-	    	if(count == 0){
-			    cursor.each(function(err, doc) {
-			    	console.log(doc)
-					var user1 = {
-						email : req.body.emailid,
-						password : req.body.password,
-						name : req.body.mem_name,
-						dob : {d:req.body.dd, m:req.body.mm, y:req.body.yyyy},
-						gender : req.body.gender,
-						number : req.body.contactnum,
-						verfcode : rand_num,
-						points: 0
-					};
+	 	var url = 'mongodb://127.0.0.1:27017/BBS';
+		MongoClient.connect(url, function(err, db){
+	      if (err) {
+	        console.log('Unable to connect to the Server:', err);
+	      } else {
+	        console.log('Connected to Server');
+		    };
+			var users = db.collection("users");
+			var user_pictures = db.collection("user_pictures");
 
-					var verf = rand_num
-					module.exports.verf = verf;
+		    var cursor = db.collection('users').find({'email':req.body.emailid});
 
-					mkdirp(('public/ads/'+email), function(err) { 
-					    console.log('directory made')
-					});
+		    cursor.count(function(err,count){
+		    	console.log(count)
+		    	if(count == 0){
+				    cursor.each(function(err, doc) {
+				    	console.log(doc)
+						var user1 = {
+							email : req.body.emailid,
+							password : req.body.password,
+							name : req.body.mem_name,
+							dob : {d:req.body.dd, m:req.body.mm, y:req.body.yyyy},
+							gender : req.body.gender,
+							number : req.body.contactnum,
+							verfcode : rand_num,
+							points: 0
+						};
 
-					mkdirp(('public/requests/'+email), function(err) { 
-					    console.log('directory made')
-					});
-					
-					users.insert([user1]);
-					db.close();
+						var verf = rand_num
+						module.exports.verf = verf;
 
-					// setup email data with unicode symbols
-					let mailOptions = {
-					    from: 'helpservice.bbs@gmail.com', // sender address
-					    to: req.body.emailid, // list of receivers
-					    subject: 'Welcome to BBS ✔', // Subject line
-					    text: 'Welcome,' + req.body.mem_name +'!'+ '\n' +'Your verification code: ' + rand_num  // plain text body
-					};
+						mkdirp(('public/ads/'+email), function(err) { 
+						    console.log('directory made')
+						});
 
-					// send mail with defined transport object
-					transporter.sendMail(mailOptions, (error, info) => {
-					    if (error) {
-					        return console.log(error);
-					    }
-					    console.log('Message %s sent: %s', info.messageId, info.response);
-					});
-					res.redirect('/profile_picture');
-			    });	    		
-	    	}
-	    	else{
-	    		res.redirect('/signup?1=You already have an account. Please log in instead');
-	    	}
-     	});
-	});			
+						mkdirp(('public/requests/'+email), function(err) { 
+						    console.log('directory made')
+						});
+						
+						users.insert([user1]);
+						db.close();
+
+						// setup email data with unicode symbols
+						let mailOptions = {
+						    from: 'helpservice.bbs@gmail.com', // sender address
+						    to: req.body.emailid, // list of receivers
+						    subject: 'Welcome to BBS ✔', // Subject line
+						    text: 'Welcome,' + req.body.mem_name +'!'+ '\n' +'Your verification code: ' + rand_num  // plain text body
+						};
+
+						// send mail with defined transport object
+						transporter.sendMail(mailOptions, (error, info) => {
+						    if (error) {
+						        return console.log(error);
+						    }
+						    console.log('Message %s sent: %s', info.messageId, info.response);
+						});
+						res.redirect('/profile_picture');
+				    });	    		
+		    	}
+		    	else{
+		    		res.redirect('/signup?1=You already have an account. Please log in instead');
+		    	}
+	     	});
+		});			
+	}
+	else
+	{
+		res.redirect('/signup?1=Please use your LUMS email ID to sign up. This platform is only for the LUMS community.')
+	}			
 });
 
 router.post('/upload',function(req, res) {

@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
         console.log('Connected to Server');
 	    };
 	    var cont =0;
-	    var top = db.collection('ratings_points').find().sort({points:-1});
+	    var top = db.collection('users').find().sort({points:-1});
 	    top.each(function(err,value){
 	    	if(value != null){
 	    		if(cont < 5){
@@ -49,15 +49,8 @@ router.get('/', function(req, res, next) {
 								var user_nm = doc.name.toLowerCase();  //users name to lower case
 								var find = (user_nm.indexOf(query) !== -1);
 								if (find == true) {
-									var cursor2 = db.collection('ratings_points').find({'email':doc.email});
-				 	    			cursor2.each(function(err,item){
-				 	    				if(item != null)
-				 	    				{
-				 	    					doc.point = item.points;
-				 	    				}
-				 	    			});
 									user_found.push(doc);
-								};	   			
+								}   			
 					    	}
 				 	    	else {
 					    		res.render('community', { title: 'community', name122:name12, array:user_found, top_points:top_points });

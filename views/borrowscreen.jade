@@ -2,7 +2,7 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    title Buy
+    title Borrow
     link(href='stylesheets/bootstrap.css', rel='stylesheet')
   body(style='background: white')
     nav.navbar.navbar-inverse
@@ -49,7 +49,9 @@ html(lang='en')
                 option(value='Stationary') Stationary 
                 option(value='Books') Books 
                 option(value='Cars') Cars 
-                option(value='Other') Other 
+                option(value='Other') Other
+            .col-md-12(style='margin-top: 20px')
+              a.btn.btn-success.btn-lg.btn-huge(href='/upload_requests') Post Request 
     br
     br
     br

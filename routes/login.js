@@ -4,11 +4,9 @@ var session = require('express-session');
 
 
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Login' });
 
+  	res.render('login', { title: 'Login' });
 });
-
-
 
 router.use(session({
     secret: 'secret',
@@ -18,10 +16,10 @@ router.use(session({
     resave: true,
     saveUninitialized: true
 }));
-var sess;
+	var sess;
 
 router.post('/submit',function(req,res,next){
-	
+		
 	var MongoClient = require('mongodb').MongoClient;
 	var url = 'mongodb://127.0.0.1:27017/BBS';
 
@@ -30,7 +28,7 @@ router.post('/submit',function(req,res,next){
 	    var cursor = db.collection('users').find({'email':req.body.email});
 	    var email = req.body.email;
 	    module.exports.email = email;
-
+	    var val = 0;
 	    cursor.each(function(err, doc) {
 	    	console.log(doc)
 	    	if(doc != null){
@@ -42,18 +40,21 @@ router.post('/submit',function(req,res,next){
 					sess.name = doc.name;
 					module.exports.sess = sess
 					res.redirect('/main');
+					val = 1;
 	    		}
-	    		else{
-
-					res.redirect('/login2');
+	    	}
+	    	else{
+	    		if (val == 0) {
+	    			res.redirect('/login2');
 	    		}
 	    	}
 
 	    });
 	}); 	
 
-	// res.redirect('/login2');
-
 })
 
+
+
+	
 module.exports = router;

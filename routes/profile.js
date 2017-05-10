@@ -33,12 +33,9 @@ router.get('/', function(req, res, next) {
             ads.push(doc);
           }
           else {
-            console.log(ads.length);
-            console.log(points);
-            var cursor2 = db.collection('ratings_points').find({'email':sess.email});
+            var cursor2 = db.collection('users').find({'email':sess.email});
             cursor2.each(function(err,doc2){
               if(doc2 != null){
-                console.log(doc2.points + ' 11');
                 points = doc2.points;
                 res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:ads, val1 : 0, points1:points });
               }
@@ -47,8 +44,6 @@ router.get('/', function(req, res, next) {
                 res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:ads, val1 : 0, points1:0 });
               }
             });
-            console.log(points+' points')
-            
           };
         });
       }
@@ -60,10 +55,9 @@ router.get('/', function(req, res, next) {
             requests.push(doc);  
           }
           else {
-            var cursor2 = db.collection('ratings_points').find({'email':sess.email});
+            var cursor2 = db.collection('users').find({'email':sess.email});
             cursor2.each(function(err,doc2){
               if(doc2 != null){
-                console.log(doc2.points + ' 11');
                 points = doc2.points;
                 res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:requests, val1 : 1, points1:points });
               }

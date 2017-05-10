@@ -4,7 +4,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 	var sess = require('./login.js').sess;
     if(sess.email){
-	  res.render('confirmation', { title: 'Confirmation',name122:name12 });
+	  res.render('confirmation', { title: 'Confirmation',name122:sess.name });
 	}
 
 });
