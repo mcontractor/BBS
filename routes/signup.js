@@ -33,12 +33,12 @@ router.post('/submit', function(req,res,next){
 	var name12 = req.body.mem_name;
 	module.exports.name12 = name12;
 
-	if ((req.body.email == null) || (req.body.mem_name == null) || (req.body.password == null) || 
-		(req.body.dd == null) || (req.body.mm == null) || (req.body.yyyy == null) || (req.body.contactnum == null)) {
+	if ((req.body.email == null) || (req.body.mem_name == '') || (req.body.password == '') || 
+		(req.body.dd == '') || (req.body.mm == '') || (req.body.contactnum == '')) {
 
 		res.redirect('/signup?1=Please fill all the fields');
 	}
-	else if (email.indexOf('lums') !== -1) {
+	 if (email.indexOf('lums') !== -1) {
 
 	 	var url = 'mongodb://127.0.0.1:27017/BBS';
 		MongoClient.connect(url, function(err, db){
@@ -67,6 +67,7 @@ router.post('/submit', function(req,res,next){
 							verfcode : rand_num,
 							points: 0
 						};
+						console.log(user1)
 
 						var verf = rand_num
 						module.exports.verf = verf;
@@ -109,7 +110,7 @@ router.post('/submit', function(req,res,next){
 	else
 	{
 		res.redirect('/signup?1=Please use your LUMS email ID to sign up. This platform is only for the LUMS community.')
-	}			
+	}
 });
 
 router.post('/upload',function(req, res) {
