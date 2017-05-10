@@ -84,6 +84,8 @@ router.post('/submit',function(req,res,next){
 	    json_ads.push(ad);
 	    cursor.insert(ad);
 
+	    db.collection('users').update({'email': email, $inc:{points: 1}});
+	  
 	    var ad_name = req.body.pname;
 		module.exports.ad_name = ad_name;
 	    db.close();

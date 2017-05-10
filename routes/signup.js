@@ -57,7 +57,8 @@ router.post('/submit', function(req,res,next){
 						dob : {d:req.body.dd, m:req.body.mm, y:req.body.yyyy},
 						gender : req.body.gender,
 						number : req.body.contactnum,
-						verfcode : rand_num
+						verfcode : rand_num,
+						points: 0
 					};
 
 					var verf = rand_num

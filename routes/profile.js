@@ -19,42 +19,67 @@ router.get('/', function(req, res, next) {
 
     MongoClient.connect(url, function(err, db) {
       if (err) {
-            console.log('Unable to connect to the Server:', err);
-          } else {
-          console.log('Connected to Server');
-        };
+        console.log('Unable to connect to the Server:', err);
+      } else
+      {
+        console.log('Connected to Server');
+      };
 
-        if (val == 0) {
-          var cursor = db.collection('ads').find({'email':sess.email});      
-          cursor.each(function(err, doc) {
-            if(doc != null){
-              ads.push(doc);
-            }
-            else {
-              console.log(ads.length);
-              res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:ads, val1 : 0 });
-            }
-          });
-        }
-        else
-        {
-          var cursor = db.collection('requests').find({'email':sess.email});      
-          cursor.each(function(err, doc) {
-            if(doc != null){
-              requests.push(doc);
-              
-            }
-            else {
-              res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:requests, val1 : 1 });
-            }
-          });
-        };
-      });
-
-
+      var points = 0;
+      if (val == 0) {
+        var cursor = db.collection('ads').find({'email':sess.email});      
+        cursor.each(function(err, doc) {
+          if(doc != null){
+            ads.push(doc);
+          }
+          else {
+            console.log(ads.length);
+            console.log(points);
+            var cursor2 = db.collection('ratings_points').find({'email':sess.email});
+            cursor2.each(function(err,doc2){
+              if(doc2 != null){
+                console.log(doc2.points + ' 11');
+                points = doc2.points;
+                res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:ads, val1 : 0, points1:points });
+              }
+              else
+              {
+                res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:ads, val1 : 0, points1:0 });
+              }
+            });
+            console.log(points+' points')
+            
+          };
+        });
+      }
+      else
+      {
+        var cursor = db.collection('requests').find({'email':sess.email});      
+        cursor.each(function(err, doc) {
+          if(doc != null){
+            requests.push(doc);  
+          }
+          else {
+            var cursor2 = db.collection('ratings_points').find({'email':sess.email});
+            cursor2.each(function(err,doc2){
+              if(doc2 != null){
+                console.log(doc2.points + ' 11');
+                points = doc2.points;
+                res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:requests, val1 : 1, points1:points });
+              }
+              else
+              {
+                res.render('profile', { title: 'Profile', name122:sess.name, link1:link, array:requests, val1 : 1, points1:0 });
+              }
+            });
+          }
+        });
+      };
+    });
   }
-  else{
-    res.redirect('/')
+  else
+  {
+    res.redirect('/');
   }
 	
 });
