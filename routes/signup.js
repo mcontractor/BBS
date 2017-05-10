@@ -33,12 +33,12 @@ router.post('/submit', function(req,res,next){
 	var name12 = req.body.mem_name;
 	module.exports.name12 = name12;
 
-	if ((req.body.email == null) || (req.body.mem_name == '') || (req.body.password == '') || 
+	if ((req.body.emailid == null) || (req.body.mem_name == '') || (req.body.password == '') || 
 		(req.body.dd == '') || (req.body.mm == '') || (req.body.contactnum == '')) {
 
 		res.redirect('/signup?1=Please fill all the fields');
 	}
-	 if (email.indexOf('lums') !== -1) {
+	else if (email.indexOf('lums') !== -1) {
 
 	 	var url = 'mongodb://127.0.0.1:27017/BBS';
 		MongoClient.connect(url, function(err, db){
